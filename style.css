@@ -1,0 +1,185 @@
+/* General Layout */
+body {
+    display: flex;
+    margin: 0; /* Removes default margin */
+}
+
+.sidebar {
+    position: fixed; /* Fixes the sidebar to a specific position on the page */
+    top: 0; /* Aligns the top of the sidebar with the top of the viewport */
+    left: 0; /* Aligns the sidebar to the left side of the viewport */
+    width: 250px; /* Adjust width of the sidebar */
+    height: 100vh; /* Full height */
+    background-color: #f0f0f0; /* Sidebar background color */
+    padding: 10px;
+    overflow-y: auto; /* Adds a scrollbar if the content is too long */
+}
+
+.sidebar button {
+    width: 100%;
+    padding: 15px; /* Increased padding for larger button area */
+    margin-bottom: 5px; /* Space between buttons */
+    background-color: transparent; /* Transparent button background */
+    border: none; /* Removes border */
+    border-bottom: 2px solid black; /* Black line below each button */
+    color: black; /* Button text color */
+    font-size: 1.2em; /* Reduced font size */
+    cursor: pointer;
+    text-align: left; /* Aligns text to the left */
+}
+
+.sidebar button:hover, .sidebar button.active {
+    background-color: #f8f8f8; /* Slight background on hover and for active button */
+}
+
+.sidebar button.active {
+    font-weight: bold; /* Makes active button text bold */
+}
+
+/* Content Styles */
+.content {
+    flex-grow: 1; /* Allows the content area to grow */
+    padding: 20px;
+    background-color: #fff; /* Background color for content area */
+    border-left: 2px solid black; /* Black line separating content */
+    overflow: auto; /* Adds scroll if content overflows */
+    margin-left: 260px; /* Adjust this value based on the actual width of your sidebar + padding */
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+/* Contact Section Styles */
+.contact-intro {
+    font-size: 1.2em; /* Larger font size for the intro sentence */
+    margin-bottom: 20px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between cards */
+    margin-top: 20px;
+}
+
+.contact-card {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 10px; /* Reduced padding */
+    text-align: center;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2); /* Subtle shadow */
+    display: block; /* Make it a block element */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1.1em; /* Adjust font size if needed */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.contact-card i {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-card:hover {
+    background-color: #e8e8e8; /* Lighter background on hover */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3); /* Slightly larger shadow for depth effect */
+}
+
+.contact-card span, .contact-card a {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contact-card a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.contact-card a:hover, .contact-card a:focus {
+    color: #000; /* Color of links on hover/focus */
+    text-decoration: underline; /* Adds underline on hover/focus */
+}
+
+.about-container {
+    display: flex;
+    align-items: center; /* Aligns image and text vertically */
+    gap: 20px; /* Space between image and text */
+}
+
+.about-image {
+    width: 350px; /* Adjust width as needed */
+    height: 350px; /* Adjust height as needed */
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensures the image covers the area properly */
+}
+
+.about-text h2 {
+    font-size: 1.5em; /* Larger text for your name */
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    /* Add more styling as needed */
+}
+
+.cv-content h3 {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.cv-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #0077b5; /* Change as needed */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cv-download:hover {
+    background-color: #005f8b; /* Darker shade for hover effect */
+}
+
+.cv-skills, .cv-education {
+    list-style-type: none; /* Removes default list bullet points */
+    padding: 0;
+}
+
+.cv-skills li, .cv-education li {
+    margin-bottom: 10px; /* Adds space between list items */
+}
+
+.cv-education ul {
+    list-style-type: disc; /* Adds bullet points to nested lists */
+    margin-top: 5px;
+    padding-left: 20px; /* Indents nested list items */
+}
+
+.project-category {
+    margin-bottom: 20px;
+}
+
+.project-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.project-details {
+    display: none; /* Initially hide details */
+    padding: 10px;
+    background-color: #e8e8e8;
+    border: 1px solid #ccc;
+}
+
+.project-details a {
+    display: block; /* GitHub link on a new line */
+    margin-top: 10px;
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <button class="nav-btn" onclick="location.href='#about'">About Me</button>
+        <button class="nav-btn" onclick="location.href='#projects'">Projects</button>
+        <button class="nav-btn" onclick="location.href='#cv'">CV</button>
+        <button class="nav-btn" onclick="location.href='#contact'">Contact</button>
+    </div>    
+
+    <div class="content">
+        <section id="about">
+            <div class="about-container">
+                <img src="main.jpg" alt="Mickel Samuel" class="about-image">
+                <div class="about-text">
+                    <h2>Mickel Samuel</h2>
+                    <p>I am a 2nd year Computer Engineering student at Concordia University, enrolled in the COOP program. With a passion for technology and innovation, I am always ready to put myself in new experiences and acquire new skills. My enthusiasm for learning is matched by my willingness to face challenges and adapt to evolving environments.</p>
+                    <p>Currently, I am seeking my first internship opportunity where I can contribute and grow, starting my career in a dynamic company that values development and innovation.</p>
+                </div>
+            </div>
+        </section>                           
+        <section id="projects">
+            <h2>Projects</h2>
+        
+            <div class="project-category">
+                <h3>Personal Projects</h3>
+                <div class="project-box" onclick="toggleProject('personal-project1')">
+                    <h4>Portfolio Website</h4>
+                    <div id="personal-project1" class="project-details">
+                        <p>This Portfolio Website was created as a comprehensive showcase of my skills and projects. It serves as a personal and professional online presence, detailing my journey and accomplishments in the field of computer engineering.</p>
+                        <p>What I Learned: Through this project, I enhanced my skills in HTML, CSS, and JavaScript. I gained practical experience in responsive web design, ensuring the website looks great on any device. Additionally, I learned about hosting websites using GitHub Pages and implementing basic SEO strategies for better online visibility.</p>
+                        <a href="https://github.com/mickelsamuel/Portfolio">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-box" onclick="toggleProject('personal-project2')">
+                    <h4>Wordle Solver</h4>
+                    <div id="personal-project2" class="project-details">
+                        <p>The Wordle Solver is a Java-based application designed to solve Wordle puzzles efficiently. It employs algorithms and data structures to analyze and predict correct word choices based on given input constraints.</p>
+                        <p>What I Learned: This project enhanced my problem-solving skills, particularly in the areas of algorithm design and data structure optimization. It deepened my understanding of Java programming and improved my ability to implement complex logic in software development.</p>
+                        <a href="https://github.com/mickelsamuel/WordleSolver">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-box" onclick="toggleProject('personal-project3')">
+                    <h4>Sudoku Solver</h4>
+                    <div id="personal-project3" class="project-details">
+                        <p>The Sudoku Solver is a Java application designed to solve Sudoku puzzles using recursion and backtracking. It efficiently navigates through the puzzle grid, filling in numbers according to Sudoku rules.</p>
+                        <p>What I Learned: This project deepened my understanding of algorithmic problem-solving, particularly in recursion and backtracking techniques. It also honed my skills in Java programming, focusing on logic implementation and efficient code structuring.</p>
+                        <a href="https://github.com/mickelsamuel/SudokuSolver">View on GitHub</a>
+                    </div>
+                </div>                                
+                <!-- Repeat for other personal projects with unique IDs -->
+            </div>                  
+            <div class="project-category">
+                <h3>Academic Projects</h3>
+                <div class="project-box" onclick="toggleProject('academic-project1')">
+                    <h4>Othello Board Game</h4>
+                    <div id="academic-project1" class="project-details">
+                        <p>The Othello Board Game is a digital adaptation of the classic strategy game, developed in C++ using Xcode. This project exemplifies the application of Object-Oriented Programming principles, utilizing classes and objects to encapsulate the game mechanics, board state, and player interactions.</p>
+                        <p>What I Learned: This project provided a hands-on experience with OOP, enhancing my understanding of concepts such as class design, inheritance, and polymorphism. It allowed me to explore the practical aspects of building an interactive game environment while emphasizing code reusability and modular design. The experience solidified my skills in C++ and deepened my appreciation for well-structured, object-oriented code in game development.</p>
+                        <a href="https://github.com/mickelsamuel/Othello-Board-Game">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="project-box" onclick="toggleProject('academic-project2')">
+                    <h4>Real Estate Website</h4>
+                    <div id="academic-project2" class="project-details">
+                        <p>The Real Estate Website is a collaborative academic project aimed at creating a dynamic web application for real estate transactions. Utilizing NextJS and PocketBase, the website caters to various user groups including house buyers, renters, brokers, and system admins, each with tailored functionalities.</p>
+                        <p>What I Learned: This project was instrumental in understanding full-stack development, from front-end design using Mantine UI and React concepts to back-end data management with PocketBase. It provided insights into user experience design, responsive web development, and the integration of real-time databases in web applications. Collaborating as a team, we honed our skills in project management, agile methodologies, and effective communication.</p>
+                        <a href="https://github.com/CodyStride/Cody_Stride-soen341projectF2023">View on GitHub</a>
+                    </div>
+                </div>
+                <!-- Repeat for other academic projects -->
+            </div>                     
+        </section>        
+        <section id="cv">
+            <h2>Curriculum Vitae</h2>
+            <div class="cv-content">
+                <h3>Skills and Qualifications</h3>
+                <ul class="cv-skills">
+                    <li><strong>Languages:</strong> English (Spoken & Written), French (Basic Spoken & Written), Arabic (Spoken & Basic Written)</li>
+                    <li><strong>Programming Languages:</strong> C++, Python, Java, C, x86 Intel Assembly Language, HTML, CSS, JavaScript, PHP</li>
+                    <li><strong>Web Technologies:</strong> React, NextJS, Bootstrap, Mantine UI</li>
+                    <li><strong>Frameworks & Tools:</strong> Xcode, Microsoft Visual Studio, Windows Forms App, PocketBase, IntelliJ IDEA, Visual Studio Code</li>
+                    <li><strong>Operating Systems:</strong> Windows, Linux, Mobile, MacOS</li>
+                    <li><strong>Methodologies:</strong> Object-Oriented Programming (OOP), Circuit Analysis, Responsive Web Design, Agile/Scrum, Full-Stack Web Development, Discrete Mathematics, Data Structures and Algorithms, Software Engineering Principles, Computer Architecture, Operating Systems Design, Numerical Analysis, Statistical Analysis</li>
+                    <li><strong>Applications:</strong> Microsoft Office (Word, Excel, PowerPoint)</li>
+                    <li><strong>Version Control:</strong> GitHub</li>
+                    <li><strong>Other Tools:</strong> YouTube, Stack Overflow</li>
+                    <li><strong>Licenses & Certifications:</strong> Valid driving permit</li>
+                </ul>                                
+                <h3>Education</h3>
+                <ul class="cv-education">
+                    <li>Bachelor of Engineering – Computer Engineering Co-op (2022 - 2026)
+                        <br>Concordia University, Montreal, QC
+                        <ul>
+                            <li>Member of the Institute for Co-operative Education</li>
+                            <li>Relevant Courses: Basic Circuit Analysis, Programming Methodology II, Applied Advanced Calculus, Discrete Mathematics, Digital Systems Design, Data Structures and Algorithms, Probability and Statistics, Numerical Methods, Software Process, Computer Organization and Software, Operating Systems</li>
+                        </ul>
+                    </li>
+                    <li>DEC in Science (2020 - 2022)
+                        <br>John Abbott College, Sainte-Anne-de-Bellevue, QC
+                        <ul>
+                            <li>Honor Roll Student (2020, 2021)</li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="Mickel Samuel Resume.pdf" class="cv-download" download="Mickel Samuel Resume.pdf">Download My CV (PDF)</a>
+            </div>
+        </section>        
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p class="contact-intro">If you'd like to get in touch, feel free to reach out through any of the following platforms:</p>
+            <div class="contact-grid">
+                <a href="mailto:mickelsamuel.b@gmail.com" class="contact-card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email</span>
+                    mickelsamuel.b@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/mickelsamuel" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                    mickelsamuel
+                </a>
+                <a href="https://github.com/mickelsamuel" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                    mickelsamuel
+                </a>
+                <a href="https://www.instagram.com/mickelsamuel_" target="_blank" class="contact-card">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                    mickelsamuel_
+                </a>
+            </div>
+        </section>                                        
+    </div>
+
+    <script>
+        function setActiveSection(sectionId) {
+            // Highlight the active button
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('onclick').includes(sectionId)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Smooth scroll to the section
+            document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Highlight the 'About Me' section as active on initial load
+        window.onload = function() {
+            document.querySelector('.nav-btn').classList.add('active');
+        };
+    </script>
+    <script>
+        function toggleProject(projectId) {
+            var project = document.getElementById(projectId);
+            project.style.display = project.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>    
+    <script>
+        // Function to check which section is currently active
+        function checkActiveSection() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.sidebar button');
+            let currentSection = '';
+    
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+    
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('onclick').includes(currentSection)) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    
+        // Event listener for scroll events
+        window.addEventListener('scroll', checkActiveSection);
+    </script>    
+</body>
+</html>
