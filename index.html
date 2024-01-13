@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
-<body>
+<body>  
+    <div class="sidebar-toggle">
+        <button onclick="toggleSidebar()">&#9776;</button>
+    </div>
     <div class="sidebar">
         <button class="nav-btn" onclick="location.href='#about'">About Me</button>
         <button class="nav-btn" onclick="location.href='#projects'">Projects</button>
@@ -55,7 +58,7 @@
                         <a href="https://github.com/mickelsamuel/SudokuSolver">View on GitHub</a>
                     </div>
                 </div>                                
-                <!-- Repeat for other personal projects with unique IDs -->
+                <!-- Repeat for other personal projects -->
             </div>                  
             <div class="project-category">
                 <h3>Academic Projects</h3>
@@ -100,7 +103,7 @@
                         <br>Concordia University, Montreal, QC
                         <ul>
                             <li>Member of the Institute for Co-operative Education</li>
-                            <li>Relevant Courses: Basic Circuit Analysis, Programming Methodology II, Applied Advanced Calculus, Discrete Mathematics, Digital Systems Design, Data Structures and Algorithms, Probability and Statistics, Numerical Methods, Software Process, Computer Organization and Software, Operating Systems</li>
+                            <li>Relevant Courses: Basic Circuit Analysis, Programming Methodology II, Applied Advanced Calculus, Discrete Mathematics, Digital Systems Design, Data Structures and Algorithms, Probability and Statistics, Numerical Methods, Software Process, Computer Organization and Software</li>
                         </ul>
                     </li>
                     <li>DEC in Science (2020 - 2022)
@@ -143,7 +146,6 @@
 
     <script>
         function setActiveSection(sectionId) {
-            // Highlight the active button
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('active');
                 if(btn.getAttribute('onclick').includes(sectionId)) {
@@ -151,14 +153,13 @@
                 }
             });
 
-            // Smooth scroll to the section
             document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Highlight the 'About Me' section as active on initial load
         window.onload = function() {
-            document.querySelector('.nav-btn').classList.add('active');
+            setActiveSection('#about');
         };
+
     </script>
     <script>
         function toggleProject(projectId) {
@@ -167,7 +168,23 @@
         }
     </script>    
     <script>
-        // Function to check which section is currently active
+        function toggleSidebar() {
+    var sidebar = document.querySelector('.sidebar');
+    var content = document.querySelector('.content'); 
+    var toggleButton = document.querySelector('.sidebar-toggle button');
+
+    if (sidebar.style.transform === 'translateX(-260px)') {
+        sidebar.style.transform = 'translateX(0px)';
+        content.style.marginLeft = '260px'; 
+        toggleButton.style.left = '250px';
+    } else {
+        sidebar.style.transform = 'translateX(-260px)';
+        content.style.marginLeft = '0px'; 
+        toggleButton.style.left = '0px';
+    }
+}
+    </script>    
+    <script>
         function checkActiveSection() {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.sidebar button');
@@ -189,8 +206,32 @@
             });
         }
     
-        // Event listener for scroll events
         window.addEventListener('scroll', checkActiveSection);
-    </script>    
+    </script>  
+    <script>
+        window.addEventListener('load', function() {
+            adjustSidebarForWindowSize();
+        });
+
+        window.addEventListener('resize', function() {
+            adjustSidebarForWindowSize();
+        });
+
+        function adjustSidebarForWindowSize() {
+            var sidebar = document.querySelector('.sidebar');
+            var content = document.querySelector('.content'); 
+            var toggleButton = document.querySelector('.sidebar-toggle button');
+
+            if (window.innerWidth <= 768) {
+                sidebar.style.transform = 'translateX(-250px)';
+                content.style.marginLeft = '0px';
+                toggleButton.style.left = '0px';
+            } else {
+                sidebar.style.transform = 'translateX(0px)';
+                content.style.marginLeft = '260px';
+                toggleButton.style.left = '250px';
+            }
+        }
+    </script>  
 </body>
 </html>
