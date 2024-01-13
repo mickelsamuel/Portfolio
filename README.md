@@ -9,9 +9,13 @@ This Portfolio Website is a personal project designed to showcase my skills and 
 - **JavaScript**: Used for interactive elements like the expandable project boxes and dynamic navigation highlighting.
 
 ## Viewing the Project
-The website can be viewed by cloning the repository and opening the `index.html` file in any modern web browser.
+The website can be viewed in two ways:
 
-`git clone https://github.com/mickelsamuel/Portfolio.git`
+1. By cloning the repository and opening the `index.html` file in any modern web browser.
+   
+   `git clone https://github.com/mickelsamuel/Portfolio.git`
+
+2. Directly through the hosted version available at: [https://mickelsamuel.github.io/Portfolio/](https://mickelsamuel.github.io/Portfolio/)
 
 ---
 
