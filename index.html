@@ -8,16 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>  
-    <div class="sidebar-toggle">
-        <button onclick="toggleSidebar()">&#9776;</button>
+    <div class="floating-nav">
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#cv" class="nav-link">CV</a>
+        <a href="#contact" class="nav-link">Contact</a>
     </div>
-    <div class="sidebar">
-        <button class="nav-btn" onclick="location.href='#about'">About Me</button>
-        <button class="nav-btn" onclick="location.href='#projects'">Projects</button>
-        <button class="nav-btn" onclick="location.href='#cv'">CV</button>
-        <button class="nav-btn" onclick="location.href='#contact'">Contact</button>
-    </div>    
-
     <div class="content">
         <section id="about">
             <div class="about-container">
@@ -31,7 +27,6 @@
         </section>                           
         <section id="projects">
             <h2>Projects</h2>
-        
             <div class="project-category">
                 <h3>Personal Projects</h3>
                 <div class="project-box" onclick="toggleProject('personal-project1')">
@@ -143,7 +138,13 @@
             </div>
         </section>                                        
     </div>
-
+    <script>
+        window.onload = function() {
+    var aboutSection = document.getElementById('about');
+    var topPos = aboutSection.offsetTop;
+    window.scrollTo(0, topPos);
+};
+    </script>
     <script>
         function setActiveSection(sectionId) {
             document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -155,83 +156,36 @@
 
             document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
         }
-
-        window.onload = function() {
-            setActiveSection('#about');
-        };
-
     </script>
     <script>
         function toggleProject(projectId) {
             var project = document.getElementById(projectId);
             project.style.display = project.style.display === 'block' ? 'none' : 'block';
         }
-    </script>    
-    <script>
-        function toggleSidebar() {
-    var sidebar = document.querySelector('.sidebar');
-    var content = document.querySelector('.content'); 
-    var toggleButton = document.querySelector('.sidebar-toggle button');
-
-    if (sidebar.style.transform === 'translateX(-260px)') {
-        sidebar.style.transform = 'translateX(0px)';
-        content.style.marginLeft = '260px'; 
-        toggleButton.style.left = '250px';
-    } else {
-        sidebar.style.transform = 'translateX(-260px)';
-        content.style.marginLeft = '0px'; 
-        toggleButton.style.left = '0px';
-    }
-}
-    </script>    
+    </script>      
     <script>
         function checkActiveSection() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.sidebar button');
-            let currentSection = '';
-    
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-    
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('onclick').includes(currentSection)) {
-                    link.classList.add('active');
-                }
-            });
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.floating-nav .nav-link');
+    let currentSection = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+            currentSection = section.getAttribute('id');
         }
-    
-        window.addEventListener('scroll', checkActiveSection);
-    </script>  
-    <script>
-        window.addEventListener('load', function() {
-            adjustSidebarForWindowSize();
-        });
+    });
 
-        window.addEventListener('resize', function() {
-            adjustSidebarForWindowSize();
-        });
-
-        function adjustSidebarForWindowSize() {
-            var sidebar = document.querySelector('.sidebar');
-            var content = document.querySelector('.content'); 
-            var toggleButton = document.querySelector('.sidebar-toggle button');
-
-            if (window.innerWidth <= 768) {
-                sidebar.style.transform = 'translateX(-250px)';
-                content.style.marginLeft = '0px';
-                toggleButton.style.left = '0px';
-            } else {
-                sidebar.style.transform = 'translateX(0px)';
-                content.style.marginLeft = '260px';
-                toggleButton.style.left = '250px';
-            }
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSection) {
+            link.classList.add('active');
         }
+    });
+}
+
+window.addEventListener('scroll', checkActiveSection);
     </script>  
 </body>
 </html>
