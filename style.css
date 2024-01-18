@@ -96,7 +96,7 @@ section {
 }
 
 .cv-content h3 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-top: 20px;
     color: black;
 }
@@ -134,15 +134,26 @@ section {
 
 .project-category {
     margin-bottom: 20px;
+    margin-top: 60px;
 }
+
 
 .project-box {
     background-color: #f0f0f0;
     padding: 10px;
-    margin-bottom: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease; 
     color: black;
+    height: auto;
+    width: 80%;
+    margin-bottom: 20px;
+    margin-right: 20px; 
+    box-sizing: border-box;
+}
+
+.project-category:nth-child(even) .project-box,
+.project-category:last-child .project-box {
+    margin-right: 0;
 }
 
 .project-box:hover {
@@ -189,4 +200,23 @@ section {
     background-color: #f0f0f0; 
     color: black; 
     border-radius: 10px;
+}
+
+#projects {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-category {
+    width: calc(50% - 10px);
+}
+
+@media screen and (max-width: 768px) {
+    #projects {
+        flex-direction: column;
+    }
+
+    .project-category {
+        width: 100%;
+    }
 }
