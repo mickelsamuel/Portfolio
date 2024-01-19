@@ -53,7 +53,7 @@ section {
 
 .contact-card:hover {
     background-color: #e8e8e8; 
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.3); 
+    box-shadow: 0px 4px 8px rgba(0,0,0,1); 
 }
 
 .contact-card span, .contact-card a {
@@ -118,8 +118,8 @@ section {
 }
 
 .cv-download:hover {
-    background-color: #e8e8e8; 
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    background-color: hsl(0, 0%, 91%); 
+    box-shadow: 0px 4px 8px rgba(0,0,0,1);
 }
 
 .cv-skills, .cv-education {
@@ -166,7 +166,7 @@ section {
 
 .project-box:hover {
     background-color: #e8e8e8; 
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0px 4px 8px rgba(0,0,0,1);
 }
 
 .project-details {
@@ -227,5 +227,29 @@ section {
 
     .project-category {
         width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        flex-direction: column; /* Stacks flex items vertically */
+    }
+
+    .about-image {
+        width: 100%; /* Adjust the width as necessary */
+        height: auto; /* Adjust height to maintain aspect ratio */
+    }
+
+    .floating-nav {
+        padding: 10px; /* Smaller padding */
+        font-size: 0.8em; /* Smaller font size */
+        /* Adjust other properties as needed */
+    }
+
+    .nav-link {
+        padding: 5px 10px; /* Smaller padding for each nav link */
+        /* Adjust other properties as needed */
     }
 }
