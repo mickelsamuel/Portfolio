@@ -235,7 +235,7 @@ section {
 
     .about-container {
         flex-direction: column; /* Stacks flex items vertically */
-        padding-top: 60px;
+        padding-top: 80px;
     }
 
     .about-image {
