@@ -238,8 +238,9 @@ section {
     }
 
     .about-image {
-        width: 100%; /* Adjust the width as necessary */
-        height: auto; /* Adjust height to maintain aspect ratio */
+        width: 200px; /* Smaller width on small screens */
+        height: 200px; /* Smaller height on small screens */
+        /* Adjust above values as needed */
     }
 
     .floating-nav {
