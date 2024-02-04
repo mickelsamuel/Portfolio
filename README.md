@@ -17,9 +17,6 @@ The website can be viewed in two ways:
 
 2. Directly through the hosted version available at: [https://mickelsamuel.github.io/Portfolio/](https://mickelsamuel.github.io/Portfolio/)
 
-### Note on Mobile Compatibility
-The website is still in the process of being optimized for mobile devices. While it's fully functional on desktop, some features and layouts may not yet be perfectly adapted for smaller screens. Work is ongoing to enhance mobile responsiveness and usability.
-
 ---
 
 Project Repository: [https://github.com/mickelsamuel/Portfolio](https://github.com/mickelsamuel/Portfolio)
