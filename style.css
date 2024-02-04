@@ -281,14 +281,21 @@ section {
 }
 
 /* Media Queries */
+/* Media Queries */
 @media screen and (max-width: 768px) {
-    #projects {
+
+    .projects-container,
+    .cv-boxes-container {
+        display: flex;
         flex-direction: column;
     }
 
-    .project-category,
+    .project-box,
     .cv-box {
         width: 100%;
+        /* Ensure there's no margin that could affect the full width */
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .contact-grid {
@@ -303,6 +310,8 @@ section {
     .about-image {
         width: 200px;
         height: 200px;
+        /* Centering the image if the container is now flex-column */
+        margin: 0 auto;
     }
 
     .floating-nav {
@@ -312,9 +321,5 @@ section {
 
     .nav-link {
         padding: 5px 10px;
-    }
-
-    .cv-content {
-        justify-content: center;
     }
 }
