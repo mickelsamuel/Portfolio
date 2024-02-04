@@ -2,7 +2,7 @@ body {
     display: flex;
     margin: 0;
     background-repeat: no-repeat;
-    background-color: rgba(249, 182, 58, 0.863);
+    background-color: black;
     background-size: cover;
 }
 
@@ -13,7 +13,7 @@ body {
     overflow: auto; 
     margin-left: 0px; 
     transition: margin-left 0.3s ease; 
-    color: black;
+    color: white;
 }
 
 section {
@@ -33,17 +33,17 @@ section {
 }
 
 .contact-card {
-    background-color: orange; 
+    background-color: dimgray; 
     padding: 10px; 
     text-align: center;
     border-radius: 10px; 
     box-shadow: 0px 2px 5px rgba(0,0,0,0.2); 
     display: block; 
-    color: black; 
+    color: white; 
     text-decoration: none; 
     font-size: 1.1em; 
     transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 .contact-card i {
@@ -54,6 +54,7 @@ section {
 .contact-card:hover {
     background-color: #e8e8e8; 
     box-shadow: 0px 4px 8px rgba(0,0,0,1); 
+    color: black;
 }
 
 .contact-card span, .contact-card a {
@@ -63,7 +64,7 @@ section {
 }
 
 .contact-card a {
-    color: black;
+    color: white;
     text-decoration: none;
     transition: color 0.3s ease; 
 }
@@ -71,6 +72,7 @@ section {
 .contact-card a:hover, .contact-card a:focus {
     color: #000; 
     text-decoration: underline; 
+    color: black;
 }
 
 .about-container {
@@ -84,48 +86,49 @@ section {
     height: 350px; 
     border-radius: 50%; 
     object-fit: cover; 
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 50%;
 }
 
 .about-text h2 {
     font-size: 1.5em; 
     margin-bottom: 10px;
-    color: black;
+    color: white;
 }
 
 .about-text p {
     font-size: 1.1em;
-    color: black;
+    color: white;
 }
 
 .cv-content h3 {
     font-size: 1.4em;
     margin-top: 20px;
-    color: black;
+    color: white;
 }
 
 .cv-download {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 15px;
-    background-color: orange; 
-    color: black;
+    background-color: dimgray; 
+    color: white;
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 .cv-download:hover {
     background-color: hsl(0, 0%, 91%); 
     box-shadow: 0px 4px 8px rgba(0,0,0,1);
+    color: black;
 }
 
 .cv-skills, .cv-education {
     list-style-type: none; 
     padding: 0;
-    color: black;
+    color: white;
 }
 
 .cv-skills li, .cv-education li {
@@ -145,17 +148,17 @@ section {
 
 
 .project-box {
-    background-color: orange;
+    background-color: dimgray;
     padding: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease; 
-    color: black;
+    color: white;
     height: auto;
     width: 80%;
     margin-bottom: 20px;
     margin-right: 20px; 
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 10px;
 }
 
@@ -167,6 +170,7 @@ section {
 .project-box:hover {
     background-color: #e8e8e8; 
     box-shadow: 0px 4px 8px rgba(0,0,0,1);
+    color: black;
 }
 
 .project-details {
@@ -186,29 +190,30 @@ section {
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: orange;
+    background-color: dimgray;
     padding: 15px;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     gap: 10px;
     z-index: 1000;
-    border: 1px solid black;
+    border: 1px solid white;
 }
 
 .nav-link {
     padding: 5px 15px;
     font-size: 1.2em;
-    color: black;
+    color: white;
     text-decoration: none;
     transition: color 0.3s, background-color 0.3s;
     margin: 0 5px;
 }
 
 .nav-link:hover, .nav-link.active {
-    background-color: #f0f0f0; 
-    color: black; 
-    border-radius: 10px;
+    font-size: 1.3em;
+    font-weight: 1000; /* Makes the text very bold */
+    color: white; /* Keeps the text color consistent with your theme */
+    background-color: transparent;
 }
 
 #projects {
