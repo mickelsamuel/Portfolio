@@ -29,6 +29,7 @@
         </section>                           
         <section id="projects">
             <h2>Projects</h2>
+            <div class="projects-container"> <!-- Projects Container -->
             <div class="project-category">
                 <h3>Personal Projects</h3>
                 <div class="project-box" onclick="toggleProject('personal-project1')">
@@ -114,25 +115,100 @@
                 </div>
                 <!-- Repeat for other academic projects -->
             </div>                     
-        </section>        
+        </section>   
+
         <section id="cv">
-            <h2>Curriculum Vitae</h2>
-            <div class="cv-content">
-                <h3>Skills and Qualifications</h3>
-                <ul class="cv-skills">
-                    <li><strong>Languages:</strong> English (Spoken & Written), French (Basic Spoken & Written), Arabic (Spoken & Basic Written)</li>
-                    <li><strong>Programming Languages:</strong> C++, Python, Java, C, x86 Intel Assembly Language, HTML, CSS, JavaScript, PHP</li>
-                    <li><strong>Web Technologies:</strong> React, NextJS, Bootstrap, Mantine UI</li>
-                    <li><strong>Frameworks & Tools:</strong> Xcode, Microsoft Visual Studio, Windows Forms App, PocketBase, IntelliJ IDEA, Visual Studio Code</li>
-                    <li><strong>Operating Systems:</strong> Windows, Linux, Mobile, MacOS</li>
-                    <li><strong>Methodologies:</strong> Object-Oriented Programming (OOP), Circuit Analysis, Responsive Web Design, Agile/Scrum, Full-Stack Web Development, Discrete Mathematics, Data Structures and Algorithms, Software Engineering Principles, Computer Architecture, Operating Systems Design, Numerical Analysis, Statistical Analysis</li>
-                    <li><strong>Applications:</strong> Microsoft Office (Word, Excel, PowerPoint)</li>
-                    <li><strong>Version Control:</strong> GitHub</li>
-                    <li><strong>Other Tools:</strong> YouTube, Stack Overflow</li>
-                    <li><strong>Licenses & Certifications:</strong> Valid driving permit</li>
-                </ul>                                
-                <h3>Education</h3>
-                <ul class="cv-education">
+    <h2>Curriculum Vitae</h2>
+    <div class="cv-content">
+        <div class="cv-boxes-container"> <!-- New container for CV boxes -->
+        <!-- Programming Languages Box -->
+        <div class="cv-box" onclick="toggleCVDetail('cv-programming-languages')">
+            <h3>Programming Languages</h3>
+            <div id="cv-programming-languages" class="cv-detail">
+                <ul>
+                    <li>C++</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>x86 Intel Assembly Language</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Languages Box -->
+        <div class="cv-box" onclick="toggleCVDetail('cv-languages')">
+            <h3>Languages</h3>
+            <div id="cv-languages" class="cv-detail">
+                <ul>
+                    <li>English (Spoken & Written)</li>
+                    <li>French (Basic Spoken & Basic Written)</li>
+                    <li>Arabic (Spoken & Basic Written)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Web Technologies Box -->
+        <div class="cv-box" onclick="toggleCVDetail('cv-web-technologies')">
+            <h3>Web Technologies</h3>
+            <div id="cv-web-technologies" class="cv-detail">
+                <ul>
+                    <li>React</li>
+                    <li>NextJS</li>
+                    <li>Bootstrap</li>
+                    <li>Mantine UI</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Frameworks, Tools & Operating Systems Box -->
+        <div class="cv-box" onclick="toggleCVDetail('cv-frameworks-tools-os')">
+            <h3>Frameworks, Tools & Operating Systems</h3>
+            <div id="cv-frameworks-tools-os" class="cv-detail">
+                <ul>
+                    <li>Xcode</li>
+                    <li>Microsoft Visual Studio</li>
+                    <li>Windows Forms App</li>
+                    <li>PocketBase</li>
+                    <li>IntelliJ IDEA</li>
+                    <li>Visual Studio Code</li>
+                    <li>Windows</li>
+                    <li>Linux</li>
+                    <li>Mobile</li>
+                    <li>MacOS</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Methodologies Box -->
+        <div class="cv-box" onclick="toggleCVDetail('cv-methodologies')">
+            <h3>Methodologies</h3>
+            <div id="cv-methodologies" class="cv-detail">
+                <ul>
+                    <li>Object-Oriented Programming (OOP)</li>
+                    <li>Circuit Analysis</li>
+                    <li>Responsive Web Design</li>
+                    <li>Agile/Scrum</li>
+                    <li>Full-Stack Web Development</li>
+                    <li>Discrete Mathematics</li>
+                    <li>Data Structures and Algorithms</li>
+                    <li>Software Engineering Principles</li>
+                    <li>Computer Architecture</li>
+                    <li>Operating Systems Design</li>
+                    <li>Numerical Analysis</li>
+                    <li>Statistical Analysis</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Education Box -->
+        <div class="cv-box" onclick="toggleCVDetail('cv-education')">
+            <h3>Education</h3>
+            <div id="cv-education" class="cv-detail">
+                <ul>
                     <li>Bachelor of Engineering – Computer Engineering Co-op (2022 - 2026)
                         <br>Concordia University, Montreal, QC
                         <ul>
@@ -147,9 +223,13 @@
                         </ul>
                     </li>
                 </ul>
-                <a href="Mickel Samuel Resume.pdf" class="cv-download" download="Mickel Samuel Resume.pdf">Download My CV (PDF)</a>
             </div>
-        </section>        
+        </div>
+    </div>
+        <a href="Mickel Samuel Resume.pdf" class="cv-download" download="Mickel Samuel Resume.pdf">Download My CV (PDF)</a>
+    </div>
+</section>
+                
         <section id="contact">
             <h2>Contact Me</h2>
             <p class="contact-intro">If you'd like to get in touch, feel free to reach out through any of the following platforms:</p>
@@ -177,54 +257,6 @@
             </div>
         </section>                                        
     </div>
-    <script>
-        window.onload = function() {
-    var aboutSection = document.getElementById('about');
-    var topPos = aboutSection.offsetTop;
-    window.scrollTo(0, topPos);
-};
-    </script>
-    <script>
-        function setActiveSection(sectionId) {
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if(btn.getAttribute('onclick').includes(sectionId)) {
-                    btn.classList.add('active');
-                }
-            });
-
-            document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
-    <script>
-        function toggleProject(projectId) {
-            var project = document.getElementById(projectId);
-            project.style.display = project.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>      
-    <script>
-        function checkActiveSection() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.floating-nav .nav-link');
-    let currentSection = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + currentSection) {
-            link.classList.add('active');
-        }
-    });
-}
-
-window.addEventListener('scroll', checkActiveSection);
-    </script>  
+    <script src="scripts.js"></script>
 </body>
 </html>
