@@ -1,325 +1,376 @@
-/* Base Styles */
-body {
-    display: flex;
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
+    padding: 0;
 }
 
-.content {
-    flex-grow: 1;
-    padding: 20px;
-    color: white;
-    overflow: auto;
-    transition: margin-left 0.3s ease;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding-top: 60px; /* Adjusted for fixed header */
 }
 
-section {
-    margin-bottom: 50px;
+a {
+    text-decoration: none;
+    color: #333;
 }
 
-/* Floating Navigation */
-.floating-nav {
+button {
+    cursor: pointer;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-mode header, .dark-mode nav, .dark-mode .nav-link, .dark-mode .project-card, .dark-mode .cv-column, .dark-mode .contact-card, .dark-mode footer {
+    background-color: #333;
+    color: #ffffff;
+}
+
+/* Header Styles */
+header {
+    background-color: #444;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: dimgray;
-    padding: 15px;
-    border-radius: 25px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
     display: flex;
-    gap: 10px;
-    z-index: 1000;
-    border: 1px solid white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
 }
 
 .nav-link {
-    padding: 5px 15px;
-    font-size: 1.2em;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
     color: white;
-    text-decoration: none;
-    transition: color 0.3s, background-color 0.3s;
-    margin: 0 5px;
+    transition: background-color 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
-    font-size: 1.3em;
-    font-weight: 1000;
+.nav-link:hover {
+    background-color: #555;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
     color: white;
-    background-color: transparent;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: #555;
+}
+
+/* Section Styles */
+.section {
+    padding: 4rem 1rem;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #444;
 }
 
 /* About Section */
 .about-container {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 2rem;
+    padding-top: 4rem; /* Added padding to prevent image from being hidden */
 }
 
 .about-image {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    border: 1px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .about-text h2 {
-    font-size: 1.6em;
-    margin-bottom: 10px;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #444;
 }
 
 .about-text p {
-    font-size: 1.3em;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+/* Projects Section */
+.projects-category {
+    margin-bottom: 2rem; /* Added margin for spacing between categories */
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.project-card {
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    perspective: 1000px; /* Added perspective for flipping effect */
+}
+
+.project-card:hover {
+    transform: rotateY(10deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-details h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.project-details p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #555;
+}
+
+/* CV Section */
+.cv-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.cv-column {
+    flex: 1;
+    min-width: 250px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.cv-column h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.cv-column ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cv-column ul li {
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.cv-download {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #444;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.cv-download:hover {
+    background-color: #555;
 }
 
 /* Contact Section */
 .contact-intro {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    margin-bottom: 1rem; /* Add margin to create space below the intro text */
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .contact-card {
-    background-color: dimgray;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    display: block;
-    color: white;
-    text-decoration: none;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid white;
-}
-
-.contact-card i {
-    margin-bottom: 5px;
-    display: block;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-card:hover {
-    background-color: #e8e8e8;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
-    color: black;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.contact-card span,
-.contact-card a {
-    display: block;
-    margin-bottom: 10px;
+.contact-card i {
+    font-size: 2rem;
+    color: #444;
+}
+
+.contact-card span {
     font-weight: bold;
+    color: #444;
 }
 
-.contact-card a {
+/* Contact Form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#contact-form input, #contact-form textarea {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#contact-form button {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
     color: white;
-    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #555;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #444;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
     transition: color 0.3s ease;
 }
 
-.contact-card a:hover,
-.contact-card a:focus {
-    color: black;
-    text-decoration: underline;
+.social-links a:hover {
+    color: #f5f5f5;
 }
 
-/* CV Section */
-.cv-content {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: flex-start;
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
 
-.cv-row {
-    display: flex;
-    width: 100%;
-    justify-content: space-between; /* Spaces the boxes evenly */
-    gap: 20px; /* Adds space between boxes */
-}
-
-.cv-boxes-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Keeps existing layout for CV boxes */
-    gap: 20px; /* Maintain spacing between boxes */
-    width: 100%; /* Ensures container takes full width */
-}
-
-.cv-box {
-    background-color: dimgray;
-    color: white;
-    margin-bottom: 15px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid white;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    width: calc(50% - 10px);
-    flex: 1;
-}
-
-.cv-box h3 {
-    font-size: 1.2em;
-    margin: 0 0 10px 0;
-}
-
-.cv-box:hover {
-    background-color: white;
-    color: black;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.cv-box:hover * {
-    color: black;
-}
-
-.cv-detail {
-    display: block;
-    padding-top: 10px;
-}
-
-.cv-detail ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.cv-detail ul li {
-    padding-bottom: 5px;
-}
-
-.cv-detail ul ul {
-    list-style-type: circle;
-    padding-left: 20px;
-}
-
-/* CV Download Button */
-.cv-download {
-    background-color: dimgray;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 20px;
-    border: 1px solid white;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
-    align-self: flex-start;
-}
-
-.cv-download:hover {
-    background-color: #e8e8e8;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
-    color: black;
-}
-
-/* Project Section */
-.projects-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    margin-left: 4%;
-}
-
-.project-category {
-    flex: 1;
-}
-
-.project-box {
-    background-color: dimgray;
-    color: white;
-    margin-bottom: 40px;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid white;
-    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-    width: 90%; /* Makes project boxes wider within their container */
-}
-
-.project-box:hover {
-    background-color: white;
-    color: black;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.project-box h3 {
-    font-size: 1.2em;
-    margin: 0 0 10px 0;
-}
-
-.project-details {
-    display: block;
-    padding-top: 10px;
-}
-
-.project-details ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.project-details ul li {
-    padding-bottom: 5px;
-}
-
-.project-details ul ul {
-    list-style-type: circle;
-    padding-left: 20px;
-}
-
-/* Media Queries */
-/* Media Queries */
-@media screen and (max-width: 768px) {
-
-    .projects-container,
-    .cv-boxes-container {
-        display: flex;
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #444;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
         flex-direction: column;
     }
 
-    .project-box,
-    .cv-box {
-        width: 100%;
-        /* Ensure there's no margin that could affect the full width */
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
+    .nav-links.active {
+        display: flex;
     }
 
     .about-container {
         flex-direction: column;
-        padding-top: 80px;
+        text-align: center;
     }
 
     .about-image {
-        width: 200px;
-        height: 200px;
-        /* Centering the image if the container is now flex-column */
-        margin: 0 auto;
+        margin-bottom: 1rem;
     }
 
-    .floating-nav {
-        padding: 10px;
-        font-size: 0.8em;
+    .projects-container {
+        grid-template-columns: 1fr;
     }
 
-    .nav-link {
-        padding: 5px 10px;
+    .contact-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }

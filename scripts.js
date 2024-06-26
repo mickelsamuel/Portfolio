@@ -1,48 +1,51 @@
-window.onload = function() {
-    var aboutSection = document.getElementById('about');
-    var topPos = aboutSection.offsetTop;
-    window.scrollTo(0, topPos);
-};
+// Toggle responsive navigation menu
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-function setActiveSection(sectionId) {
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-        if(btn.getAttribute('onclick').includes(sectionId)) {
-            btn.classList.add('active');
-        }
+menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// Smooth scrolling for navigation links
+const navLinksElements = document.querySelectorAll('.nav-link');
+
+navLinksElements.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const targetPosition = targetElement.offsetTop - 60; // Adjusted for fixed header
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
     });
-    document.querySelector(sectionId).scrollIntoView({ behavior: 'smooth' });
-};
+});
 
-function checkActiveSection() {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.floating-nav .nav-link');
-    let currentSection = '';
+// Toggle dark mode
+const darkModeToggle = document.getElementById('dark-mode-toggle');
 
-    if (window.pageYOffset === 0) {
-        currentSection = 'about';
-    } else {
-        const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
-        if (window.pageYOffset >= scrollableHeight) {
-            currentSection = 'contact';
-        } else {
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-        }
-    }
+darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + currentSection) {
-            link.classList.add('active');
-        }
+// Handle contact form submission
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: form.method,
+        body: formData,
+    })
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('form-message').textContent = data;
+        form.reset();
+    })
+    .catch(error => {
+        document.getElementById('form-message').textContent = 'Failed to send message. Please try again.';
     });
-};
-
-window.addEventListener('scroll', checkActiveSection);
-window.addEventListener('load', checkActiveSection);
+});
