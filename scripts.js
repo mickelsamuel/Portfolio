@@ -39,13 +39,25 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     fetch(form.action, {
         method: form.method,
         body: formData,
+        headers: {
+            'Accept': 'application/json'
+        }
     })
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('form-message').textContent = data;
-        form.reset();
+    .then(response => {
+        if (response.ok) {
+            document.getElementById('form-message').textContent = 'Message sent successfully!';
+            form.reset();
+        } else {
+            return response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    document.getElementById('form-message').textContent = data["errors"].map(error => error["message"]).join(", ");
+                } else {
+                    document.getElementById('form-message').textContent = 'Oops! There was a problem sending your message.';
+                }
+            });
+        }
     })
     .catch(error => {
-        document.getElementById('form-message').textContent = 'Failed to send message. Please try again.';
+        document.getElementById('form-message').textContent = 'Oops! There was a problem sending your message.';
     });
 });
