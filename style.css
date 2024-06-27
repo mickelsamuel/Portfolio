@@ -6,8 +6,9 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px; /* Increased font size */
+    line-height: 1.8; /* Increased line height for better readability */
     color: #333;
     background-color: #f5f5f5;
     margin: 0;
@@ -17,7 +18,7 @@ body {
 
 a {
     text-decoration: none;
-    color: #333;
+    color: #007BFF;
 }
 
 button {
@@ -162,14 +163,14 @@ input:checked + .slider:before {
 }
 
 .section-content {
-    max-width: 1200px;
+    max-width: 1400px; /* Increased max-width */
     margin: 0 auto;
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 2rem;
+    font-size: 2.2rem; /* Increased font size */
     color: #444;
 }
 
@@ -194,7 +195,7 @@ body.dark-mode .section-title {
 }
 
 .about-text h2 {
-    font-size: 1.8rem;
+    font-size: 2rem; /* Increased font size */
     margin-bottom: 1rem;
     color: #444;
 }
@@ -219,12 +220,12 @@ body.dark-mode .about-text p {
 
 .projects-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted grid layout */
     gap: 2rem;
 }
 
 .category-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Increased font size */
     margin-bottom: 1rem;
     color: #444;
 }
@@ -236,7 +237,7 @@ body.dark-mode .category-title {
 .project-card {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 1.5rem; /* Increased padding */
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -252,7 +253,7 @@ body.dark-mode .project-card {
 }
 
 .project-details h4 {
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Increased font size */
     margin-bottom: 0.5rem;
     color: #444;
 }
@@ -293,10 +294,10 @@ body.dark-mode .project-details p {
 
 .cv-column {
     flex: 1;
-    min-width: 250px;
+    min-width: 300px; /* Increased minimum width */
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 1.5rem; /* Increased padding */
     border-radius: 5px;
 }
 
@@ -306,7 +307,7 @@ body.dark-mode .cv-column {
 }
 
 .cv-column h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem; /* Increased font size */
     margin-bottom: 1rem;
     color: #444;
 }
@@ -351,7 +352,7 @@ body.dark-mode .cv-column ul li {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted grid layout */
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -359,7 +360,7 @@ body.dark-mode .cv-column ul li {
 .contact-card {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 1.5rem; /* Increased padding */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -379,7 +380,7 @@ body.dark-mode .contact-card {
 }
 
 .contact-card i {
-    font-size: 2rem;
+    font-size: 2.2rem; /* Increased icon size */
     color: #444;
 }
 
@@ -407,6 +408,7 @@ body.dark-mode .contact-card span {
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 body.dark-mode #contact-form input, body.dark-mode #contact-form textarea {
@@ -445,7 +447,7 @@ body.dark-mode footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1400px; /* Increased max-width */
     margin: 0 auto;
 }
 
