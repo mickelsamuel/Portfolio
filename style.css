@@ -12,6 +12,7 @@ body {
     background-color: #f5f5f5;
     margin: 0;
     padding-top: 60px; /* Adjusted for fixed header */
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 a {
@@ -26,12 +27,36 @@ button {
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212;
-    color: #ffffff;
+    color: #e0e0e0;
 }
 
 .dark-mode header, .dark-mode nav, .dark-mode .nav-link, .dark-mode .project-card, .dark-mode .cv-column, .dark-mode .contact-card, .dark-mode footer {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.dark-mode .nav-link:hover, .dark-mode .nav-link.active {
     background-color: #333;
-    color: #ffffff;
+}
+
+.dark-mode .project-card {
+    background-color: #2e2e2e;
+}
+
+.dark-mode .project-details h4, .dark-mode .project-details p {
+    color: #e0e0e0;
+}
+
+.dark-mode .contact-card {
+    background-color: #2e2e2e;
+}
+
+.dark-mode .cv-download {
+    background-color: #2e2e2e;
+}
+
+.dark-mode .cv-download:hover {
+    background-color: #444;
 }
 
 /* Header Styles */
@@ -64,7 +89,7 @@ nav {
     transition: background-color 0.3s ease;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link.active {
     background-color: #555;
 }
 
@@ -75,21 +100,60 @@ nav {
     color: white;
 }
 
-/* Dark Mode Toggle Button */
-.dark-mode-toggle {
+/* Dark Mode Toggle Switch */
+.switch {
     position: fixed;
     top: 10px;
     right: 10px;
-    padding: 0.5rem 1rem;
-    background-color: #444;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    z-index: 1000;
+    width: 60px;
+    height: 34px;
 }
 
-.dark-mode-toggle:hover {
-    background-color: #555;
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 /* Section Styles */
@@ -107,6 +171,10 @@ nav {
     margin-bottom: 2rem;
     font-size: 2rem;
     color: #444;
+}
+
+body.dark-mode .section-title {
+    color: #e0e0e0;
 }
 
 /* About Section */
@@ -131,9 +199,17 @@ nav {
     color: #444;
 }
 
+body.dark-mode .about-text h2 {
+    color: #e0e0e0;
+}
+
 .about-text p {
     margin-bottom: 1rem;
     color: #555;
+}
+
+body.dark-mode .about-text p {
+    color: #e0e0e0;
 }
 
 /* Projects Section */
@@ -153,18 +229,26 @@ nav {
     color: #444;
 }
 
+body.dark-mode .category-title {
+    color: #e0e0e0;
+}
+
 .project-card {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 1rem;
     border-radius: 5px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    perspective: 1000px; /* Added perspective for flipping effect */
+}
+
+body.dark-mode .project-card {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
 }
 
 .project-card:hover {
-    transform: rotateY(10deg);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .project-details h4 {
@@ -173,9 +257,17 @@ nav {
     color: #444;
 }
 
+body.dark-mode .project-details h4 {
+    color: #e0e0e0;
+}
+
 .project-details p {
     margin-bottom: 1rem;
     color: #555;
+}
+
+body.dark-mode .project-details p {
+    color: #e0e0e0;
 }
 
 .project-link {
@@ -208,10 +300,19 @@ nav {
     border-radius: 5px;
 }
 
+body.dark-mode .cv-column {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
 .cv-column h3 {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #444;
+}
+
+body.dark-mode .cv-column h3 {
+    color: #e0e0e0;
 }
 
 .cv-column ul {
@@ -222,6 +323,10 @@ nav {
 .cv-column ul li {
     margin-bottom: 0.5rem;
     color: #555;
+}
+
+body.dark-mode .cv-column ul li {
+    color: #e0e0e0;
 }
 
 .cv-download {
@@ -263,6 +368,11 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+body.dark-mode .contact-card {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
 .contact-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -273,9 +383,17 @@ nav {
     color: #444;
 }
 
+body.dark-mode .contact-card i {
+    color: #e0e0e0;
+}
+
 .contact-card span {
     font-weight: bold;
     color: #444;
+}
+
+body.dark-mode .contact-card span {
+    color: #e0e0e0;
 }
 
 /* Contact Form */
@@ -289,6 +407,12 @@ nav {
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+
+body.dark-mode #contact-form input, body.dark-mode #contact-form textarea {
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+    border-color: #444;
 }
 
 #contact-form button {
@@ -311,6 +435,10 @@ footer {
     color: white;
     padding: 1rem;
     text-align: center;
+}
+
+body.dark-mode footer {
+    background-color: #1e1e1e;
 }
 
 .footer-content {
@@ -373,4 +501,28 @@ footer {
     .contact-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
+}
+
+/* Custom Cursor */
+body {
+    cursor: url('custom-cursor.png'), auto;
+}
+
+/* Loader Styles */
+.loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #3498db;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
 }

@@ -9,6 +9,11 @@
     <script defer src="scripts.js"></script>
 </head>
 <body>
+    <div id="loader" class="loader"></div>
+    <label class="switch">
+        <input type="checkbox" id="dark-mode-toggle">
+        <span class="slider round"></span>
+    </label>
     <header>
         <nav>
             <div class="nav-links">
@@ -24,8 +29,6 @@
     </header>
 
     <main>
-        <button id="dark-mode-toggle" class="dark-mode-toggle">Toggle Dark Mode</button>
-
         <section id="about" class="section">
             <div class="section-content">
                 <div class="about-container">
@@ -48,8 +51,8 @@
                         <div class="project-card">
                             <div class="project-details">
                                 <h4>Portfolio Website</h4>
-                                <p>This Portfolio Website was created as a comprehensive showcase of my skills and projects. It serves as a personal and professional online presence, detailing my journey and accomplishments in the field of computer engineering.</p>
-                                <p>What I Learned: Through this project, I enhanced my skills in HTML, CSS, and JavaScript. I gained practical experience in responsive web design, ensuring the website looks great on any device. Additionally, I learned about hosting websites using GitHub Pages and implementing basic SEO strategies for better online visibility.</p>
+                                <p>This Portfolio Website was created as a comprehensive showcase of my skills and projects. It serves as a personal and professional online presence, detailing my journey and accomplishments in the field of computer engineering. The site includes features like dark mode toggle, interactive project cards, smooth scrolling for navigation, and a contact form with Formspree integration, all designed to enhance user experience and engagement.</p>
+                                <p>What I Learned: Through this project, I enhanced my skills in HTML, CSS, and JavaScript. I gained practical experience in responsive web design, ensuring the website looks great on any device. Additionally, I learned about hosting websites using GitHub Pages and implementing basic SEO strategies for better online visibility. Working on this portfolio helped me understand how to integrate interactive elements and third-party services, making the site more dynamic and user-friendly.</p>
                                 <a href="https://github.com/mickelsamuel/Portfolio" class="project-link">View on GitHub</a>
                             </div>
                         </div>
@@ -215,6 +218,7 @@
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
                     <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    <input type="file" id="file" name="file">
                     <button type="submit">Send Message</button>
                 </form>
                 <p id="form-message"></p>
