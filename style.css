@@ -1,4 +1,6 @@
-/* Reset and Base Styles */
+/* ------------------------------------- */
+/* RESET & BASE STYLES */
+/* ------------------------------------- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,36 +9,53 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px; /* Increased font size */
-    line-height: 1.8; /* Increased line height for better readability */
+    font-size: 18px; 
+    line-height: 1.8; 
     color: #333;
     background-color: #f5f5f5;
     margin: 0;
-    padding-top: 60px; /* Adjusted for fixed header */
+    padding-top: 60px; /* space for fixed header */
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 a {
     text-decoration: none;
     color: #007BFF;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
 }
 
 button {
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Dark Mode Styles */
+/* ------------------------------------- */
+/* DARK MODE */
+/* ------------------------------------- */
 body.dark-mode {
     background-color: #121212;
     color: #e0e0e0;
 }
 
-.dark-mode header, .dark-mode nav, .dark-mode .nav-link, .dark-mode .project-card, .dark-mode .cv-column, .dark-mode .contact-card, .dark-mode footer {
+/* Dark backgrounds */
+.dark-mode header,
+.dark-mode nav,
+.dark-mode .nav-link,
+.dark-mode .project-card,
+.dark-mode .cv-column,
+.dark-mode .contact-card,
+.dark-mode footer,
+.dark-mode .cv-subsection {
     background-color: #1e1e1e;
     color: #e0e0e0;
 }
 
-.dark-mode .nav-link:hover, .dark-mode .nav-link.active {
+.dark-mode .nav-link:hover,
+.dark-mode .nav-link.active {
     background-color: #333;
 }
 
@@ -44,8 +63,8 @@ body.dark-mode {
     background-color: #2e2e2e;
 }
 
-.dark-mode .project-details h4, .dark-mode .project-details p {
-    color: #e0e0e0;
+.dark-mode .cv-column {
+    background-color: #2e2e2e;
 }
 
 .dark-mode .contact-card {
@@ -60,7 +79,9 @@ body.dark-mode {
     background-color: #444;
 }
 
-/* Header Styles */
+/* ------------------------------------- */
+/* HEADER & NAV */
+/* ------------------------------------- */
 header {
     background-color: #444;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -90,7 +111,8 @@ nav {
     transition: background-color 0.3s ease;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     background-color: #555;
 }
 
@@ -101,7 +123,9 @@ nav {
     color: white;
 }
 
-/* Dark Mode Toggle Switch */
+/* ------------------------------------- */
+/* DARK MODE TOGGLE SWITCH */
+/* ------------------------------------- */
 .switch {
     position: fixed;
     top: 10px;
@@ -120,9 +144,9 @@ nav {
 .slider {
     position: absolute;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; 
+    left: 0; 
+    right: 0; 
     bottom: 0;
     background-color: #ccc;
     transition: 0.4s;
@@ -149,28 +173,22 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
-    border-radius: 50%;
-}
-
-/* Section Styles */
+/* ------------------------------------- */
+/* SECTIONS */
+/* ------------------------------------- */
 .section {
     padding: 4rem 1rem;
 }
 
 .section-content {
-    max-width: 1400px; /* Increased max-width */
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .section-title {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 2.2rem; /* Increased font size */
+    font-size: 2.2rem;
     color: #444;
 }
 
@@ -178,12 +196,23 @@ body.dark-mode .section-title {
     color: #e0e0e0;
 }
 
-/* About Section */
+/* Parallax background (optional) */
+.parallax {
+    /* Example (uncomment if you have a banner): 
+    background: url('banner.jpg') no-repeat center center fixed; */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* ------------------------------------- */
+/* ABOUT SECTION */
+/* ------------------------------------- */
 .about-container {
     display: flex;
     align-items: center;
     gap: 2rem;
-    padding-top: 4rem; /* Added padding to prevent image from being hidden */
+    padding-top: 4rem;
 }
 
 .about-image {
@@ -195,7 +224,7 @@ body.dark-mode .section-title {
 }
 
 .about-text h2 {
-    font-size: 2rem; /* Increased font size */
+    font-size: 2rem;
     margin-bottom: 1rem;
     color: #444;
 }
@@ -213,33 +242,45 @@ body.dark-mode .about-text p {
     color: #e0e0e0;
 }
 
-/* Projects Section */
-.projects-category {
-    margin-bottom: 2rem; /* Added margin for spacing between categories */
+.highlight {
+    color: #007BFF;
 }
 
-.projects-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjusted grid layout */
-    gap: 2rem;
+/* ------------------------------------- */
+/* PROJECTS SECTION */
+/* ------------------------------------- */
+.projects-category {
+    margin-bottom: 3rem; /* extra spacing between categories */
 }
 
 .category-title {
-    font-size: 1.8rem; /* Increased font size */
+    font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 body.dark-mode .category-title {
     color: #e0e0e0;
 }
 
+/* Grid for project cards */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/* Project Card */
 .project-card {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem; /* Increased padding */
-    border-radius: 5px;
+    padding: 1.5rem;
+    border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; 
+    position: relative;
 }
 
 body.dark-mode .project-card {
@@ -247,13 +288,17 @@ body.dark-mode .project-card {
     color: #e0e0e0;
 }
 
+/* Subtle tilt effect on hover (added to .tilt-hover) */
+.tilt-hover:hover {
+    transform: rotateX(3deg) rotateY(-3deg) scale(1.02);
+}
+
 .project-card:hover {
-    transform: scale(1.05);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
 .project-details h4 {
-    font-size: 1.8rem; /* Increased font size */
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: #444;
 }
@@ -265,12 +310,14 @@ body.dark-mode .project-details h4 {
 .project-details p {
     margin-bottom: 1rem;
     color: #555;
+    line-height: 1.6;
 }
 
 body.dark-mode .project-details p {
     color: #e0e0e0;
 }
 
+/* Project link button */
 .project-link {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -284,7 +331,9 @@ body.dark-mode .project-details p {
     background-color: #555;
 }
 
-/* CV Section */
+/* ------------------------------------- */
+/* CV SECTION */
+/* ------------------------------------- */
 .cv-container {
     display: flex;
     flex-wrap: wrap;
@@ -294,11 +343,11 @@ body.dark-mode .project-details p {
 
 .cv-column {
     flex: 1;
-    min-width: 300px; /* Increased minimum width */
+    min-width: 320px;
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem; /* Increased padding */
-    border-radius: 5px;
+    padding: 1.5rem;
+    border-radius: 8px;
 }
 
 body.dark-mode .cv-column {
@@ -307,18 +356,31 @@ body.dark-mode .cv-column {
 }
 
 .cv-column h3 {
-    font-size: 1.5rem; /* Increased font size */
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 body.dark-mode .cv-column h3 {
     color: #e0e0e0;
 }
 
+.cv-subsection h4 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+    color: #444;
+}
+
+body.dark-mode .cv-subsection h4 {
+    color: #e0e0e0;
+}
+
 .cv-column ul {
     list-style: none;
     padding-left: 0;
+    margin-bottom: 1rem;
 }
 
 .cv-column ul li {
@@ -345,14 +407,18 @@ body.dark-mode .cv-column ul li {
     background-color: #555;
 }
 
-/* Contact Section */
+/* ------------------------------------- */
+/* CONTACT SECTION */
+/* ------------------------------------- */
 .contact-intro {
-    margin-bottom: 1rem; /* Add margin to create space below the intro text */
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-bottom: 2rem;
 }
@@ -360,8 +426,8 @@ body.dark-mode .cv-column ul li {
 .contact-card {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem; /* Increased padding */
-    border-radius: 5px;
+    padding: 1.5rem;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -380,7 +446,7 @@ body.dark-mode .contact-card {
 }
 
 .contact-card i {
-    font-size: 2.2rem; /* Increased icon size */
+    font-size: 2.2rem;
     color: #444;
 }
 
@@ -402,16 +468,21 @@ body.dark-mode .contact-card span {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-#contact-form input, #contact-form textarea {
+#contact-form input,
+#contact-form textarea {
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    width: 100%;
 }
 
-body.dark-mode #contact-form input, body.dark-mode #contact-form textarea {
+body.dark-mode #contact-form input,
+body.dark-mode #contact-form textarea {
     background-color: #2e2e2e;
     color: #e0e0e0;
     border-color: #444;
@@ -431,7 +502,15 @@ body.dark-mode #contact-form input, body.dark-mode #contact-form textarea {
     background-color: #555;
 }
 
-/* Footer Styles */
+#form-message {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* ------------------------------------- */
+/* FOOTER */
+/* ------------------------------------- */
 footer {
     background-color: #444;
     color: white;
@@ -447,8 +526,10 @@ body.dark-mode footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1400px; /* Increased max-width */
+    max-width: 1400px; 
     margin: 0 auto;
+    flex-wrap: wrap; /* allow wrapping on small screens */
+    gap: 1rem;
 }
 
 .social-links {
@@ -459,13 +540,23 @@ body.dark-mode footer {
 .social-links a {
     color: white;
     transition: color 0.3s ease;
+    font-size: 1.2rem;
 }
 
 .social-links a:hover {
     color: #f5f5f5;
 }
 
-/* Responsive Styles */
+/* ------------------------------------- */
+/* MEDIA QUERIES (RESPONSIVE) */
+/* ------------------------------------- */
+@media (max-width: 992px) {
+    /* Slightly reduce padding for sections on tablets */
+    .section {
+        padding: 3rem 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -500,17 +591,24 @@ body.dark-mode footer {
         grid-template-columns: 1fr;
     }
 
-    .contact-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
-/* Custom Cursor */
+/* ------------------------------------- */
+/* CUSTOM CURSOR (OPTIONAL) */
+/* ------------------------------------- */
+/*
 body {
     cursor: url('custom-cursor.png'), auto;
 }
+*/
 
-/* Loader Styles */
+/* ------------------------------------- */
+/* LOADER */
+/* ------------------------------------- */
 .loader {
     position: fixed;
     left: 50%;
@@ -522,9 +620,10 @@ body {
     border-top: 5px solid #3498db;
     animation: spin 1s linear infinite;
     z-index: 1000;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes spin {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    0%   { transform: translate(-50%, -50%) rotate(0deg); }
     100% { transform: translate(-50%, -50%) rotate(360deg); }
 }

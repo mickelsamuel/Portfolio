@@ -1,120 +1,140 @@
-// Toggle responsive navigation menu
+// -------------------------------------
+// RESPONSIVE NAV MENU
+// -------------------------------------
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    menuToggle.classList.toggle('active');
+  navLinks.classList.toggle('active');
+  menuToggle.classList.toggle('active');
 });
 
-// Smooth scrolling for navigation links
+// -------------------------------------
+// SMOOTH SCROLL FOR NAV LINKS
+// -------------------------------------
 const navLinksElements = document.querySelectorAll('.nav-link');
 
-navLinksElements.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = e.currentTarget.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const targetPosition = targetElement.offsetTop - 60; // Adjusted for fixed header
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
-        });
+navLinksElements.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    // Adjust for the fixed header
+    const offsetPosition = targetElement.offsetTop - 60;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
     });
+    // Close mobile nav if open
+    navLinks.classList.remove('active');
+    menuToggle.classList.remove('active');
+  });
 });
 
-// Toggle dark mode
+// -------------------------------------
+// DARK MODE TOGGLE
+// -------------------------------------
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 
 darkModeToggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark-mode');
+  document.body.classList.toggle('dark-mode');
 });
 
-// Highlight active navigation link
+// -------------------------------------
+// HIGHLIGHT ACTIVE NAV LINK ON SCROLL
+// -------------------------------------
 window.addEventListener('scroll', () => {
-    let current = '';
-    document.querySelectorAll('section').forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 60) {
-            current = section.getAttribute('id');
-        }
-    });
+  let currentSection = '';
 
-    navLinksElements.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-        }
-    });
+  document.querySelectorAll('section').forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (window.scrollY >= sectionTop - 100) {
+      currentSection = section.getAttribute('id');
+    }
+  });
+
+  navLinksElements.forEach((link) => {
+    link.classList.remove('active');
+    if (link.getAttribute('href').substring(1) === currentSection) {
+      link.classList.add('active');
+    }
+  });
 });
 
-// Handle contact form submission
+// -------------------------------------
+// CONTACT FORM HANDLING (FORMSPREE)
+// -------------------------------------
 const form = document.getElementById('contact-form');
+const formMessage = document.getElementById('form-message');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
-    let valid = true;
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+  let valid = true;
 
-    if (!name) {
-        valid = false;
-        form.name.classList.add('error');
-    } else {
-        form.name.classList.remove('error');
+  // Basic validation
+  if (!name) {
+    valid = false;
+    form.name.classList.add('error');
+  } else {
+    form.name.classList.remove('error');
+  }
+
+  if (!email || !validateEmail(email)) {
+    valid = false;
+    form.email.classList.add('error');
+  } else {
+    form.email.classList.remove('error');
+  }
+
+  if (!message) {
+    valid = false;
+    form.message.classList.add('error');
+  } else {
+    form.message.classList.remove('error');
+  }
+
+  if (valid) {
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        formMessage.textContent = 'Message sent successfully!';
+        form.reset();
+      } else {
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          formMessage.textContent = data.errors
+            .map((error) => error.message)
+            .join(', ');
+        } else {
+          formMessage.textContent =
+            'Oops! There was a problem sending your message.';
+        }
+      }
+    } catch (error) {
+      formMessage.textContent =
+        'Oops! There was a problem sending your message.';
     }
-
-    if (!email || !validateEmail(email)) {
-        valid = false;
-        form.email.classList.add('error');
-    } else {
-        form.email.classList.remove('error');
-    }
-
-    if (!message) {
-        valid = false;
-        form.message.classList.add('error');
-    } else {
-        form.message.classList.remove('error');
-    }
-
-    if (valid) {
-        const formData = new FormData(form);
-
-        fetch(form.action, {
-            method: form.method,
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                document.getElementById('form-message').textContent = 'Message sent successfully!';
-                form.reset();
-            } else {
-                return response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        document.getElementById('form-message').textContent = data["errors"].map(error => error["message"]).join(", ");
-                    } else {
-                        document.getElementById('form-message').textContent = 'Oops! There was a problem sending your message.';
-                    }
-                });
-            }
-        })
-        .catch(error => {
-            document.getElementById('form-message').textContent = 'Oops! There was a problem sending your message.';
-        });
-    }
+  }
 });
 
 function validateEmail(email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
-    return re.test(String(email).toLowerCase());
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
+  return re.test(String(email).toLowerCase());
 }
 
-// Remove loader after page load
+// -------------------------------------
+// LOADER
+// -------------------------------------
 window.addEventListener('load', () => {
-    document.getElementById('loader').style.display = 'none';
+  const loader = document.getElementById('loader');
+  loader.style.display = 'none';
 });

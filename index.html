@@ -1,243 +1,521 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <script defer src="scripts.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio - Mickel Samuel</title>
+
+  <!-- Google Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+  />
+
+  <!-- FontAwesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+
+  <!-- Animate.css (Optional) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon (Optional) -->
+  <!-- <link rel="icon" type="image/png" href="favicon.png" /> -->
+
+  <script defer src="scripts.js"></script>
 </head>
 <body>
-    <div id="loader" class="loader"></div>
-    <label class="switch">
-        <input type="checkbox" id="dark-mode-toggle">
-        <span class="slider round"></span>
-    </label>
-    <header>
-        <nav>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">About Me</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#cv" class="nav-link">CV</a>
-                <a href="#contact" class="nav-link">Contact Me</a>
-            </div>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+  <!-- Loader -->
+  <div id="loader" class="loader"></div>
 
-    <main>
-        <section id="about" class="section parallax">
-            <div class="section-content">
-                <div class="about-container">
-                    <img src="main.jpg" alt="Mickel Samuel" class="about-image">
-                    <div class="about-text">
-                        <h2>Mickel Samuel</h2>
-                        <p>I am a 2nd year Computer Engineering student at Concordia University, enrolled in the COOP program. With a passion for technology and innovation, I am always ready to put myself in new experiences and acquire new skills. My enthusiasm for learning is matched by my willingness to face challenges and adapt to evolving environments.</p>
-                        <p>Currently, I am seeking my first internship opportunity where I can contribute and grow, starting my career in a dynamic company that values development and innovation.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Dark Mode Switch -->
+  <label class="switch">
+    <input type="checkbox" id="dark-mode-toggle" />
+    <span class="slider round"></span>
+  </label>
 
-        <section id="projects" class="section">
-            <div class="section-content">
-                <h2 class="section-title">Projects</h2>
-                <div class="projects-category">
-                    <h3 class="category-title">Personal Projects</h3>
-                    <div class="projects-container">
-                        <div class="project-card">
-                            <div class="project-details">
-                                <h4>Portfolio Website</h4>
-                                <p>This Portfolio Website was created as a comprehensive showcase of my skills and projects. It serves as a personal and professional online presence, detailing my journey and accomplishments in the field of computer engineering. The site includes features like dark mode toggle, interactive project cards, smooth scrolling for navigation, and a contact form with Formspree integration, all designed to enhance user experience and engagement.</p>
-                                <p>What I Learned: Through this project, I enhanced my skills in HTML, CSS, and JavaScript. I gained practical experience in responsive web design, ensuring the website looks great on any device. Additionally, I learned about hosting websites using GitHub Pages and implementing basic SEO strategies for better online visibility. Working on this portfolio helped me understand how to integrate interactive elements and third-party services, making the site more dynamic and user-friendly.</p>
-                                <a href="https://github.com/mickelsamuel/Portfolio" class="project-link">View on GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-details">
-                                <h4>Wordle Solver</h4>
-                                <p>The Wordle Solver is a Java-based application designed to solve Wordle puzzles efficiently. It employs algorithms and data structures to analyze and predict correct word choices based on given input constraints.</p>
-                                <p>What I Learned: This project enhanced my problem-solving skills, particularly in the areas of algorithm design and data structure optimization. It deepened my understanding of Java programming and improved my ability to implement complex logic in software development.</p>
-                                <a href="https://github.com/mickelsamuel/WordleSolver" class="project-link">View on GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-details">
-                                <h4>Sudoku Solver</h4>
-                                <p>The Sudoku Solver is a Java application designed to solve Sudoku puzzles using recursion and backtracking. It efficiently navigates through the puzzle grid, filling in numbers according to Sudoku rules.</p>
-                                <p>What I Learned: This project deepened my understanding of algorithmic problem-solving, particularly in recursion and backtracking techniques. It also honed my skills in Java programming, focusing on logic implementation and efficient code structuring.</p>
-                                <a href="https://github.com/mickelsamuel/SudokuSolver" class="project-link">View on GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="projects-category">
-                    <h3 class="category-title">Academic Projects</h3>
-                    <div class="projects-container">
-                        <div class="project-card">
-                            <div class="project-details">
-                                <h4>Othello Board Game</h4>
-                                <p>The Othello Board Game is a digital adaptation of the classic strategy game, developed in C++ using Xcode. This project exemplifies the application of Object-Oriented Programming principles, utilizing classes and objects to encapsulate the game mechanics, board state, and player interactions.</p>
-                                <p>What I Learned: This project provided a hands-on experience with OOP, enhancing my understanding of concepts such as class design, inheritance, and polymorphism. It allowed me to explore the practical aspects of building an interactive game environment while emphasizing code reusability and modular design. The experience solidified my skills in C++ and deepened my appreciation for well-structured, object-oriented code in game development.</p>
-                                <a href="https://github.com/mickelsamuel/Othello-Board-Game" class="project-link">View on GitHub</a>
-                            </div>
-                        </div>
-                        <div class="project-card">
-                            <div class="project-details">
-                                <h4>Real Estate Website</h4>
-                                <p>The Real Estate Website is a collaborative academic project aimed at creating a dynamic web application for real estate transactions. Utilizing NextJS and PocketBase, the website caters to various user groups including house buyers, renters, brokers, and system admins, each with tailored functionalities.</p>
-                                <p>What I Learned: This project was instrumental in understanding full-stack development, from front-end design using Mantine UI and React concepts to back-end data management with PocketBase. It provided insights into user experience design, responsive web development, and the integration of real-time databases in web applications. Collaborating as a team, we honed our skills in project management, agile methodologies, and effective communication.</p>
-                                <a href="https://github.com/CodyStride/Cody_Stride-soen341projectF2023" class="project-link">View on GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  <!-- Header and Nav -->
+  <header>
+    <nav>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#cv" class="nav-link">CV</a>
+        <a href="#contact" class="nav-link">Contact Me</a>
+      </div>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
 
-        <section id="cv" class="section">
-            <div class="section-content">
-                <h2 class="section-title">Curriculum Vitae</h2>
-                <div class="cv-container">
-                    <div class="cv-column">
-                        <h3>Programming Languages</h3>
-                        <ul>
-                            <li>C++</li>
-                            <li>Python</li>
-                            <li>Java</li>
-                            <li>C</li>
-                            <li>x86 Intel Assembly Language</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>PHP</li>
-                        </ul>
-                    </div>
-                    <div class="cv-column">
-                        <h3>Languages</h3>
-                        <ul>
-                            <li>English (Spoken & Written)</li>
-                            <li>French (Basic Spoken & Basic Written)</li>
-                            <li>Arabic (Spoken & Basic Written)</li>
-                        </ul>
-                    </div>
-                    <div class="cv-column">
-                        <h3>Web Technologies</h3>
-                        <ul>
-                            <li>React</li>
-                            <li>NextJS</li>
-                            <li>Bootstrap</li>
-                            <li>Mantine UI</li>
-                        </ul>
-                    </div>
-                    <div class="cv-column">
-                        <h3>Frameworks, Tools & Operating Systems</h3>
-                        <ul>
-                            <li>Xcode</li>
-                            <li>Microsoft Visual Studio</li>
-                            <li>Windows Forms App</li>
-                            <li>PocketBase</li>
-                            <li>IntelliJ IDEA</li>
-                            <li>Visual Studio Code</li>
-                            <li>Windows</li>
-                            <li>Linux</li>
-                            <li>Mobile</li>
-                            <li>MacOS</li>
-                        </ul>
-                    </div>
-                    <div class="cv-column">
-                        <h3>Methodologies</h3>
-                        <ul>
-                            <li>Object-Oriented Programming (OOP)</li>
-                            <li>Circuit Analysis</li>
-                            <li>Responsive Web Design</li>
-                            <li>Agile/Scrum</li>
-                            <li>Full-Stack Web Development</li>
-                            <li>Discrete Mathematics</li>
-                            <li>Data Structures and Algorithms</li>
-                            <li>Software Engineering Principles</li>
-                            <li>Computer Architecture</li>
-                            <li>Operating Systems Design</li>
-                            <li>Numerical Analysis</li>
-                            <li>Statistical Analysis</li>
-                        </ul>
-                    </div>
-                    <div class="cv-column">
-                        <h3>Education</h3>
-                        <ul>
-                            <li>Bachelor of Engineering – Computer Engineering Co-op (2022 - 2026)
-                                <br>Concordia University, Montreal, QC
-                                <ul>
-                                    <li>Member of the Institute for Co-operative Education</li>
-                                    <li>Relevant Courses: Basic Circuit Analysis, Programming Methodology II, Applied Advanced Calculus, Discrete Mathematics, Digital Systems Design, Data Structures and Algorithms, Probability and Statistics, Numerical Methods, Software Process, Computer Organization and Software</li>
-                                </ul>
-                            </li>
-                            <li>DEC in Science (2020 - 2022)
-                                <br>John Abbott College, Sainte-Anne-de-Bellevue, QC
-                                <ul>
-                                    <li>Honor Roll Student (2020, 2021)</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <a href="Mickel Samuel.pdf" class="cv-download" download="Mickel Samuel.pdf">Download My CV (PDF)</a>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="section-content">
-                <h2 class="section-title">Contact Me</h2>
-                <p class="contact-intro">If you'd like to get in touch, feel free to reach out through any of the following platforms:</p>
-                <div class="contact-grid">
-                    <a href="mailto:mickelsamuel.b@gmail.com" class="contact-card">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>Email</span>
-                        mickelsamuel.b@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/mickelsamuel" target="_blank" class="contact-card">
-                        <i class="fa-brands fa-linkedin"></i>
-                        <span>LinkedIn</span>
-                        mickelsamuel
-                    </a>
-                    <a href="https://github.com/mickelsamuel" target="_blank" class="contact-card">
-                        <i class="fa-brands fa-github"></i>
-                        <span>GitHub</span>
-                        mickelsamuel
-                    </a>
-                    <a href="https://www.instagram.com/mickelsamuel_" target="_blank" class="contact-card">
-                        <i class="fa-brands fa-instagram"></i>
-                        <span>Instagram</span>
-                        mickelsamuel_
-                    </a>
-                </div>
-                <form id="contact-form" action="https://formspree.io/f/mblrrqqa" method="POST">
-                    <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    <input type="file" id="file" name="file">
-                    <button type="submit">Send Message</button>
-                </form>
-                <p id="form-message"></p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Mickel Samuel. All rights reserved.</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/mickelsamuel" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/mickelsamuel" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.instagram.com/mickelsamuel_" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
+  <!-- Main Content -->
+  <main>
+    <!-- About Section (Parallax + Gradient) -->
+    <section id="about" class="section parallax">
+      <div class="section-content">
+        <div class="about-container animate__animated animate__fadeIn">
+          <!-- Replace 'main.jpg' with your actual image -->
+          <img
+            src="main.jpg"
+            alt="Mickel Samuel"
+            class="about-image"
+          />
+          <div class="about-text">
+            <h2>
+              Hello, I'm 
+              <span class="highlight">Mickel Samuel</span>
+            </h2>
+            <p>
+              I am a 2nd-year Computer Engineering student at 
+              Concordia University (C.Edge program). My passion 
+              lies in technology and innovation, and I'm always 
+              exploring new experiences to hone my skills.
+            </p>
+            <p>
+              With a strong enthusiasm for continuous learning, 
+              I adapt quickly to evolving environments and love 
+              tackling challenging problems. Currently, I'm seeking 
+              internship opportunities where I can contribute, grow, 
+              and develop my career in a company that values creativity 
+              and collaboration. Let's build something amazing together!
+            </p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script src="scripts.js"></script>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="section-content">
+        <h2 class="section-title animate__animated animate__fadeInDown">
+          Projects
+        </h2>
+
+        <!-- Academic Projects -->
+        <!-- Merged all previous “Highlighted” projects into “Academic Projects” -->
+        <div class="projects-category">
+          <h3 class="category-title">Academic Projects</h3>
+          <div class="projects-container">
+            <!-- Patient Monitoring Android App (Elderly Health Monitor) -->
+            <div class="project-card animate__animated animate__zoomIn tilt-hover">
+              <div class="project-details">
+                <h4>Patient Monitoring Android App</h4>
+                <p>
+                  An Android app for real-time monitoring of 
+                  vital signs (heart rate, temperature, oxygen 
+                  levels) in elderly patients. Implemented 
+                  health anomaly notifications and led a team 
+                  as Scrum Master for timely deliverables.
+                </p>
+                <p>
+                  <strong>What I Learned:</strong> Android 
+                  frameworks, sensor integration, Scrum Master 
+                  leadership, data privacy compliance.
+                </p>
+                <a
+                  href="https://github.com/mickelsamuel/Elderly-Health-Monitor-App"
+                  class="project-link"
+                  target="_blank"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Real Estate Website -->
+            <div class="project-card animate__animated animate__zoomIn tilt-hover">
+              <div class="project-details">
+                <h4>Real Estate Website</h4>
+                <p>
+                  A dynamic full-stack web application utilizing 
+                  Next.js, React, and PocketBase for real estate 
+                  transactions. Implemented Mantine UI for a 
+                  polished front-end and leveraged Agile 
+                  methodologies for smooth collaboration.
+                </p>
+                <p>
+                  <strong>What I Learned:</strong> Full-stack 
+                  Next.js development, real-time data management, 
+                  UI/UX design with Mantine UI.
+                </p>
+                <a
+                  href="https://github.com/CodyStride/Cody_Stride-soen341projectF2023"
+                  class="project-link"
+                  target="_blank"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Hovercraft Project -->
+            <div class="project-card animate__animated animate__zoomIn tilt-hover">
+              <div class="project-details">
+                <h4>Hovercraft Project</h4>
+                <p>
+                  Designed and programmed an autonomous hovercraft 
+                  powered by Arduino, integrating sensors/fans for 
+                  real-time obstacle detection and navigation. 
+                  Engineered efficient obstacle avoidance, lift, 
+                  and balance systems.
+                </p>
+                <p>
+                  <strong>What I Learned:</strong> Arduino 
+                  development, sensor fusion, mechanical design, 
+                  real-time obstacle avoidance.
+                </p>
+                <!-- Add a GitHub link if available -->
+                <!-- <a href="#" class="project-link" target="_blank">View on GitHub</a> -->
+              </div>
+            </div>
+
+            <!-- AgendaMate App (iOS) -->
+            <div class="project-card animate__animated animate__zoomIn tilt-hover">
+              <div class="project-details">
+                <h4>AgendaMate App (iOS)</h4>
+                <p>
+                  A comprehensive iOS task management app 
+                  incorporating journaling, notes, and real-time 
+                  weather updates (SwiftUI, Core Data, external 
+                  Weather API). Integrated Face ID and passcode 
+                  protection for enhanced data privacy.
+                </p>
+                <p>
+                  <strong>What I Learned:</strong> SwiftUI, Apple 
+                  EventKit, iOS security & privacy best practices, 
+                  project structuring.
+                </p>
+                <a
+                  href="https://github.com/mickelsamuel/AgendaMate"
+                  class="project-link"
+                  target="_blank"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Personal Projects -->
+        <div class="projects-category">
+          <h3 class="category-title">Personal Projects</h3>
+          <div class="projects-container">
+            <!-- Portfolio Website -->
+            <div class="project-card animate__animated animate__zoomIn tilt-hover">
+              <div class="project-details">
+                <h4>Portfolio Website</h4>
+                <p>
+                  A responsive portfolio website built with 
+                  HTML, CSS, and JavaScript to showcase 
+                  professional projects. Deployed via GitHub 
+                  Pages with basic SEO for visibility.
+                </p>
+                <p>
+                  <strong>What I Learned:</strong> Responsive 
+                  web design, GitHub Pages deployment, 
+                  SEO fundamentals.
+                </p>
+                <a
+                  href="https://github.com/mickelsamuel/Portfolio"
+                  class="project-link"
+                  target="_blank"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Wordle Solver -->
+            <div class="project-card animate__animated animate__zoomIn tilt-hover">
+              <div class="project-details">
+                <h4>Wordle Solver</h4>
+                <p>
+                  A Java-based application designed to solve 
+                  Wordle puzzles using specialized algorithms 
+                  and data structures to analyze valid word choices 
+                  under input constraints.
+                </p>
+                <p>
+                  <strong>What I Learned:</strong> Algorithm 
+                  design, data structure optimization, advanced 
+                  Java logic implementation.
+                </p>
+                <a
+                  href="https://github.com/mickelsamuel/WordleSolver"
+                  class="project-link"
+                  target="_blank"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+
+            <!-- Sudoku Solver -->
+            <div class="project-card animate__animated animate__zoomIn tilt-hover">
+              <div class="project-details">
+                <h4>Sudoku Solver</h4>
+                <p>
+                  A Java application that uses recursion and 
+                  backtracking to efficiently solve Sudoku 
+                  puzzles, ensuring correct placements based 
+                  on Sudoku rules.
+                </p>
+                <p>
+                  <strong>What I Learned:</strong> Recursion 
+                  and backtracking techniques, Java-based 
+                  problem-solving.
+                </p>
+                <a
+                  href="https://github.com/mickelsamuel/SudokuSolver"
+                  class="project-link"
+                  target="_blank"
+                >
+                  View on GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV / Resume Section -->
+    <section id="cv" class="section">
+      <div class="section-content">
+        <h2 class="section-title animate__animated animate__fadeInDown">
+          Curriculum Vitae
+        </h2>
+
+        <div class="cv-container new-cv-layout animate__animated animate__fadeIn">
+          <!-- Skills Column -->
+          <div class="cv-column">
+            <h3>Skills</h3>
+            <div class="cv-subsection">
+              <h4>Programming Languages</h4>
+              <ul>
+                <li>C++, Python, Java, C</li>
+                <li>Assembly (x86, ARM)</li>
+                <li>HTML, CSS, JavaScript, PHP</li>
+                <li>VHDL, XML</li>
+              </ul>
+            </div>
+            <div class="cv-subsection">
+              <h4>Web Technologies</h4>
+              <ul>
+                <li>React, NextJS</li>
+                <li>Bootstrap, Mantine UI</li>
+              </ul>
+            </div>
+            <div class="cv-subsection">
+              <h4>Frameworks &amp; Tools</h4>
+              <ul>
+                <li>Xcode, Visual Studio, IntelliJ IDEA</li>
+                <li>PocketBase, Android Studio, Git/GitHub</li>
+                <li>Verilog, FPGAs, MATLAB, ModelSim</li>
+                <li>Xilinx Tool, UML</li>
+              </ul>
+            </div>
+            <div class="cv-subsection">
+              <h4>Operating Systems</h4>
+              <ul>
+                <li>Windows, Linux, MacOS, Mobile</li>
+              </ul>
+            </div>
+            <div class="cv-subsection">
+              <h4>Methodologies</h4>
+              <ul>
+                <li>Agile/Scrum</li>
+                <li>Full-Stack Web Dev</li>
+                <li>OOP, Software Engineering</li>
+                <li>Numerical Analysis</li>
+              </ul>
+            </div>
+            <div class="cv-subsection">
+              <h4>Languages</h4>
+              <ul>
+                <li>English (Fluent)</li>
+                <li>French (Intermediate)</li>
+                <li>Arabic (Fluent)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Projects Column (optional summary) -->
+          <div class="cv-column">
+            <h3>Selected Projects</h3>
+            <ul>
+              <li><strong>AgendaMate App (iOS):</strong> SwiftUI, Core Data</li>
+              <li><strong>Patient Monitoring (Android):</strong> Sensor Integration</li>
+              <li><strong>Real Estate Website:</strong> Next.js, React, PocketBase</li>
+              <li><strong>Hovercraft Project (Arduino):</strong> Obstacle Detection</li>
+              <li><strong>Portfolio Website:</strong> HTML, CSS, JS on GitHub Pages</li>
+            </ul>
+          </div>
+
+          <!-- Education, Work & Volunteer Experience -->
+          <div class="cv-column">
+            <h3>Education</h3>
+            <ul>
+              <li>
+                <strong>Bachelor of Engineering – Computer Engineering (C.Edge)</strong><br />
+                Concordia University, Montreal, QC (2022 – 2026 Expected)<br />
+                Relevant coursework: Software Process &amp; Practices (JS, Python), 
+                Data Structures (Java), Operating Systems (C, Java), 
+                Digital Systems Design (VHDL), Computer Organization (x86 Assembly), 
+                Programming Methodology (C++)
+              </li>
+            </ul>
+
+            <h3>Work Experience</h3>
+            <ul>
+              <li>
+                <strong>Inventory Clerk (2021 – 2022)</strong> – Distribution Regitan, Dorval, QC<br />
+                • Resolved customer inquiries and maintained accurate inventory records.<br />
+                • Ensured smooth operations across all locations.
+              </li>
+            </ul>
+
+            <h3>Volunteer Work</h3>
+            <ul>
+              <li>
+                <strong>Open House Rep (2022 – 2024)</strong> – Concordia University, Montreal, QC<br />
+                • Guided prospective students and parents, managed tour schedules, 
+                  provided detailed info on academic programs.
+              </li>
+              <li>
+                <strong>Tutor (2019 – Present)</strong> – Emmanuel Christian School, D.D.O.<br />
+                • Offered individualized tutoring for elementary &amp; high school students.<br />
+                • Strengthened problem-solving via simplified learning approaches.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Download CV Button -->
+        <a
+          href="Mickel_Samuel_Resume.pdf"
+          class="cv-download"
+          download="Mickel_Samuel_Resume.pdf"
+        >
+          Download My CV (PDF)
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="section-content">
+        <h2 class="section-title animate__animated animate__fadeInDown">
+          Contact Me
+        </h2>
+        <p class="contact-intro">
+          If you'd like to get in touch, feel free to reach out through 
+          any of the following platforms:
+        </p>
+
+        <!-- Quick Contact Cards -->
+        <div class="contact-grid animate__animated animate__fadeIn">
+          <a href="mailto:mickelsamuel.b@gmail.com" class="contact-card">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Email</span>
+            mickelsamuel.b@gmail.com
+          </a>
+          <a
+            href="https://www.linkedin.com/in/mickelsamuel"
+            target="_blank"
+            class="contact-card"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+            <span>LinkedIn</span>
+            mickelsamuel
+          </a>
+          <a
+            href="https://github.com/mickelsamuel"
+            target="_blank"
+            class="contact-card"
+          >
+            <i class="fa-brands fa-github"></i>
+            <span>GitHub</span>
+            mickelsamuel
+          </a>
+          <a
+            href="https://www.instagram.com/mickelsamuel_"
+            target="_blank"
+            class="contact-card"
+          >
+            <i class="fa-brands fa-instagram"></i>
+            <span>Instagram</span>
+            mickelsamuel_
+          </a>
+        </div>
+
+        <!-- Contact Form (Formspree) -->
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/mblrrqqa"
+          method="POST"
+        >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <input type="file" id="file" name="file" />
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="form-message"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Mickel Samuel. All rights reserved.</p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/mickelsamuel"
+          target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/mickelsamuel"
+          target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/mickelsamuel_"
+          target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
