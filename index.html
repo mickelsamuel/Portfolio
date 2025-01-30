@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mickel Samuel | Portfolio</title>
 
   <!-- Google Fonts -->
@@ -35,7 +35,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
-<body>
+<body class="dark-mode">
+  <!-- Particles Background (site-wide) -->
+  <div id="particles-js"></div>
+
   <!-- Loader -->
   <div id="loader" class="loader"></div>
 
@@ -49,10 +52,12 @@
 
   <!-- Theme Switcher -->
   <div class="theme-switcher">
-    <button id="light-mode" class="active">
+    <!-- Light Mode -->
+    <button id="light-mode">
       <i class="fas fa-sun"></i>
     </button>
-    <button id="dark-mode">
+    <!-- Dark Mode (start active) -->
+    <button id="dark-mode" class="active">
       <i class="fas fa-moon"></i>
     </button>
   </div>
@@ -72,9 +77,8 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="about" class="section parallax">
-    <div id="particles-js"></div>
+  <!-- Hero / About Section -->
+  <section id="about" class="section">
     <div class="hero-content">
       <div class="hero-text animate__animated animate__fadeIn">
         <h1>Innovate. Develop. <span class="highlight">Create.</span></h1>
@@ -83,7 +87,7 @@
           <span id="typing"></span>
         </p>
         <p class="hero-bio">
-          2nd-year Computer Engineering student at Concordia University building impactful
+          3nd-year Computer Engineering student at Concordia University building impactful
           solutions through code. Passionate about full-stack development, embedded systems,
           and algorithm design.
         </p>
@@ -203,40 +207,6 @@
               </ul>
             </div>
           </div>
-
-          <!-- Project 4 -->
-          <div class="project-card" data-aos="zoom-in">
-            <div class="project-details">
-              <div class="project-header">
-                <i class="fab fa-apple project-icon"></i>
-                <h4>AgendaMate App (iOS)</h4>
-              </div>
-              <p class="project-description">
-                Comprehensive task management app with journaling, notes, and real-time
-                weather updates using SwiftUI and Core Data.
-              </p>
-              <div class="project-tech">
-                <span>SwiftUI</span>
-                <span>Core Data</span>
-                <span>Weather API</span>
-              </div>
-              <a
-                href="https://github.com/mickelsamuel/AgendaMate"
-                class="project-link"
-                target="_blank"
-              >
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
-            <div class="project-back">
-              <h4>Key Features</h4>
-              <ul class="project-learned">
-                <li>Face ID and passcode protection</li>
-                <li>Real-time weather integration</li>
-                <li>Customizable task categories</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -246,7 +216,7 @@
           <i class="fas fa-laptop-code"></i> Personal Projects
         </h3>
         <div class="projects-container">
-          <!-- Project 5 -->
+          <!-- Project: Portfolio Website -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
@@ -254,8 +224,10 @@
                 <h4>Portfolio Website</h4>
               </div>
               <p class="project-description">
-                Responsive portfolio website built with HTML, CSS, and JavaScript
-                to showcase professional projects and skills.
+                A fully responsive single-page site showcasing advanced animations (AOS), 
+                dynamic particle backgrounds, dark/light mode toggling, scroll progress, 
+                and a functional contact form via Formspree. Built to highlight professional 
+                projects, skills, and an interactive user experience.
               </p>
               <div class="project-tech">
                 <span>HTML</span>
@@ -273,9 +245,10 @@
             <div class="project-back">
               <h4>Key Features</h4>
               <ul class="project-learned">
-                <li>Responsive design</li>
-                <li>Dark mode toggle</li>
-                <li>GitHub Pages deployment</li>
+                <li>Site-wide particle animation</li>
+                <li>Scroll-based progress bar</li>
+                <li>Dark/Light theme switcher</li>
+                <li>Responsive design for all devices</li>
               </ul>
             </div>
           </div>
@@ -347,6 +320,40 @@
               </ul>
             </div>
           </div>
+
+          <!-- AgendaMate App (moved from Academic) -->
+          <div class="project-card" data-aos="zoom-in">
+            <div class="project-details">
+              <div class="project-header">
+                <i class="fab fa-apple project-icon"></i>
+                <h4>AgendaMate App (iOS)</h4>
+              </div>
+              <p class="project-description">
+                Comprehensive task management app with journaling, notes, and real-time
+                weather updates using SwiftUI and Core Data.
+              </p>
+              <div class="project-tech">
+                <span>SwiftUI</span>
+                <span>Core Data</span>
+                <span>Weather API</span>
+              </div>
+              <a
+                href="https://github.com/mickelsamuel/AgendaMate"
+                class="project-link"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+            <div class="project-back">
+              <h4>Key Features</h4>
+              <ul class="project-learned">
+                <li>Face ID and passcode protection</li>
+                <li>Real-time weather integration</li>
+                <li>Customizable task categories</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -361,25 +368,90 @@
         <div class="cv-column">
           <div class="cv-block">
             <h3><i class="fas fa-code"></i> Technical Skills</h3>
+
             <div class="skill-category">
-              <h4>Languages</h4>
+              <h4>Programming Languages</h4>
               <div class="skill-tags">
                 <span>C++</span>
                 <span>Python</span>
                 <span>Java</span>
+                <span>C</span>
+                <span>Assembly Language</span>
+                <span>HTML</span>
+                <span>CSS</span>
                 <span>JavaScript</span>
-                <span>ARM Assembly</span>
+                <span>PHP</span>
+                <span>VHDL</span>
+                <span>ARM</span>
+                <span>XML</span>
+                <span>R</span>
+                <span>SQL</span>
+                <span>TypeScript</span>
               </div>
             </div>
+
             <div class="skill-category">
-              <h4>Frameworks</h4>
+              <h4>Web Technologies</h4>
               <div class="skill-tags">
                 <span>React</span>
-                <span>Node.js</span>
-                <span>Android SDK</span>
-                <span>TensorFlow Lite</span>
+                <span>NextJS</span>
+                <span>Bootstrap</span>
+                <span>Mantine UI</span>
+                <span>MongoDB</span>
+                <span>APIs</span>
               </div>
             </div>
+
+            <div class="skill-category">
+              <h4>Frameworks & Tools</h4>
+              <div class="skill-tags">
+                <span>Xcode</span>
+                <span>Visual Studio</span>
+                <span>IntelliJ IDEA</span>
+                <span>PocketBase</span>
+                <span>Android Studio</span>
+                <span>Git</span>
+                <span>Github</span>
+                <span>Verilog</span>
+                <span>FPGAs</span>
+                <span>MATLAB</span>
+                <span>ModelSim</span>
+                <span>Xilinx Tool</span>
+                <span>UML</span>
+                <span>Docker</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>Operating Systems</h4>
+              <div class="skill-tags">
+                <span>Windows</span>
+                <span>Linux</span>
+                <span>MacOS</span>
+                <span>Mobile</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>Methodologies</h4>
+              <div class="skill-tags">
+                <span>Agile/Scrum</span>
+                <span>Full-Stack Web Development</span>
+                <span>OOP</span>
+                <span>Software Eng Principles</span>
+                <span>Numerical Analysis</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h4>Languages</h4>
+              <div class="skill-tags">
+                <span>English (fluent)</span>
+                <span>French (intermediate)</span>
+                <span>Arabic (fluent)</span>
+              </div>
+            </div>
+
           </div>
         </div>
 
@@ -404,8 +476,12 @@
               <span class="education-institution">Concordia University</span>
               <span class="education-date">2022 - 2026</span>
               <p>
-                Relevant Coursework: Data Structures, OS, Digital Systems Design,
-                Computer Architecture
+                Relevant Coursework: Software Process and Practices (JavaScript, CSS, Python), 
+                Data Structures and Algorithms (Java), Operating Systems (C, Java), 
+                Digital Systems Design (VHDL), Computer Organization and Software (x86 Assembly), 
+                Programming Methodology (C++), Communication Networks and Protocols (Python), 
+                Real-Time Systems, Numerical Methods (MATLAB), Networks Security and Management 
+                (Python, Wireshark), Artificial Intelligence (Python).
               </p>
             </div>
           </div>
@@ -531,9 +607,13 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <!-- AOS Library -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- Main Scripts -->
   <script src="scripts.js"></script>
 </body>
 </html>
