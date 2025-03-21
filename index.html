@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mickel Samuel | Portfolio</title>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Poppins -->
   <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
   />
 
   <!-- FontAwesome for icons -->
@@ -32,9 +32,18 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 
+  <!-- VanillaTilt (for 3D tilt on cards) -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
+    integrity="sha512-9t9pRuE4xYlJ8s/p62m0SufH6uT7MuNv6lzl7b0JmOuJbpzR9kDKH38fPjh/a5Xzf5LiE1p6Iol3lgzI+G2/9g=="
+    crossorigin="anonymous"
+    defer
+  ></script>
+
   <!-- Favicon (optional) -->
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
+
 <!-- Start in DARK mode by default -->
 <body class="dark-mode">
 
@@ -47,17 +56,17 @@
   <!-- Scroll Progress bar -->
   <div class="scroll-progress"></div>
 
-  <!-- Back to Top Button -->
-  <button id="back-to-top" title="Go to top">
+  <!-- Back to Top Button (with ARIA label for accessibility) -->
+  <button id="back-to-top" title="Go to top" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 
   <!-- Theme Switcher (dark/light mode toggle) -->
   <div class="theme-switcher">
-    <button id="light-mode">
+    <button id="light-mode" aria-label="Switch to light mode">
       <i class="fas fa-sun"></i>
     </button>
-    <button id="dark-mode" class="active">
+    <button id="dark-mode" class="active" aria-label="Switch to dark mode">
       <i class="fas fa-moon"></i>
     </button>
   </div>
@@ -78,34 +87,67 @@
   </header>
 
   <!-- Hero / About Section -->
-  <section id="about" class="section">
+  <!-- Added new elements and updated text based on feedback -->
+  <section id="about" class="section hero-section">
     <div class="hero-content container animate__animated animate__fadeIn">
+
       <!-- Text Side -->
       <div class="hero-text">
-        <div class="hero-tagline">Full-Stack & Embedded Systems Developer</div>
-        <h1>Turning Ideas Into <span class="highlight">Digital Reality</span></h1>
-        <p class="typing-animation">
+        <div class="badge">Available for Opportunities</div>
+
+        <!-- Main heading updated -->
+        <h1>
+          Building Digital Experiences
+          <span class="highlight">That Matter</span>
+        </h1>
+
+        <!-- Subheading or tagline -->
+        <p class="hero-subheading">
           I'm <span class="highlight">Mickel Samuel</span>, a
-          <span id="typing"></span>
+          3rd-year Computer Engineering student at Concordia University
+          (2022–2026). Passionate about full-stack development,
+          embedded systems, and algorithm design.
         </p>
-        <p class="hero-bio">
-          3rd-year Computer Engineering student at Concordia University (2022–2026)
-          committed to building impactful solutions through code. Passionate about
-          full-stack development, embedded systems, and algorithm design.
+
+        <!-- Typing animation remains, with user’s words -->
+        <p class="typing-animation">
+          I’m also a <span id="typing"></span>
         </p>
+
+        <!-- Social proof counters -->
+        <div class="social-proof">
+          <div class="proof-item">
+            <span class="count">15+</span>
+            <span class="label">Projects Completed</span>
+          </div>
+        </div>
+
+        <!-- CTAs -->
         <div class="hero-cta">
           <a href="#projects" class="cta-button">Explore Projects</a>
           <a href="#contact" class="cta-button secondary">Hire Me</a>
         </div>
       </div>
 
-      <!-- Image Side (with parallax effect) -->
+      <!-- Image Side (with parallax + lazy loading) -->
       <div class="hero-image">
         <div class="image-wrapper">
-          <img src="main.jpg" alt="Mickel Samuel" class="profile-photo" />
+          <!-- Use a tiny base64 placeholder in 'src', real image in 'data-src' -->
+          <img
+            class="profile-photo"
+            alt="Mickel Samuel"
+            src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+            data-src="main.jpg"
+            loading="lazy"
+          />
           <div class="glow-effect"></div>
         </div>
       </div>
+    </div>
+
+    <!-- Subtle scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
     </div>
   </section>
 
@@ -114,14 +156,29 @@
     <div class="section-content">
       <h2 class="section-title" data-aos="fade-down">Featured Projects</h2>
 
+      <!-- Project Filter Buttons -->
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="academic">Academic</button>
+        <button class="filter-btn" data-filter="personal">Personal</button>
+      </div>
+
       <!-- Academic Projects -->
       <div class="projects-category">
         <h3 class="category-title">
           <i class="fas fa-graduation-cap"></i> Academic Projects
         </h3>
         <div class="projects-container">
+
           <!-- Patient Monitoring Android App -->
-          <div class="project-card" data-aos="zoom-in">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-max="8"
+            data-status="Completed"
+            data-aos="zoom-in"
+            data-category="academic"
+          >
             <div class="project-details">
               <div class="project-header">
                 <i class="fab fa-android project-icon"></i>
@@ -158,15 +215,23 @@
           </div>
 
           <!-- Real Estate Website -->
-          <div class="project-card" data-aos="zoom-in">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-max="8"
+            data-status="Completed"
+            data-aos="zoom-in"
+            data-category="academic"
+          >
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-home project-icon"></i>
                 <h4>Real Estate Website (2023)</h4>
               </div>
               <p class="project-description">
-                Full-stack property listing platform featuring user authentication,
-                geolocation-based search, and real-time chat for clients and brokers.
+                Full-stack property listing platform featuring user
+                authentication, geolocation-based search, and real-time
+                chat for clients and brokers.
               </p>
               <div class="project-tech">
                 <span>Next.js</span>
@@ -193,15 +258,22 @@
           </div>
 
           <!-- Autonomous Hovercraft -->
-          <div class="project-card" data-aos="zoom-in">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-max="8"
+            data-status="Completed"
+            data-aos="zoom-in"
+            data-category="academic"
+          >
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-robot project-icon"></i>
                 <h4>Autonomous Hovercraft (2023)</h4>
               </div>
               <p class="project-description">
-                Self-navigating hovercraft using Arduino Uno with ultrasonic sensors
-                for obstacle avoidance and PID control.
+                Self-navigating hovercraft using Arduino Uno with ultrasonic
+                sensors for obstacle avoidance and PID control.
               </p>
               <div class="project-tech">
                 <span>Arduino</span>
@@ -227,8 +299,16 @@
           <i class="fas fa-laptop-code"></i> Personal Projects
         </h3>
         <div class="projects-container">
+
           <!-- GymTrackPro -->
-          <div class="project-card" data-aos="zoom-in">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-max="8"
+            data-status="In Progress"
+            data-aos="zoom-in"
+            data-category="personal"
+          >
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-dumbbell project-icon"></i>
@@ -250,7 +330,7 @@
                 <span>Ruby</span>
               </div>
               <a
-                href="https://github.com/mickelsamuel"
+                href="https://github.com/mickelsamuel/gym"
                 class="project-link"
                 target="_blank"
               >
@@ -268,7 +348,14 @@
           </div>
 
           <!-- AgendaMate iOS App -->
-          <div class="project-card" data-aos="zoom-in">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-max="8"
+            data-status="Completed"
+            data-aos="zoom-in"
+            data-category="personal"
+          >
             <div class="project-details">
               <div class="project-header">
                 <i class="fab fa-apple project-icon"></i>
@@ -304,16 +391,24 @@
           </div>
 
           <!-- Portfolio Website -->
-          <div class="project-card" data-aos="zoom-in">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-max="8"
+            data-status="In Progress"
+            data-aos="zoom-in"
+            data-category="personal"
+          >
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-code project-icon"></i>
                 <h4>Portfolio Website</h4>
               </div>
               <p class="project-description">
-                Fully responsive single-page website highlighting advanced animations (AOS),
-                dynamic particle backgrounds, dark/light mode toggling, scroll progress,
-                and a functional contact form via Formspree.
+                Fully responsive single-page website highlighting advanced
+                animations (AOS), dynamic particle backgrounds,
+                dark/light mode toggling, scroll progress, and a
+                functional contact form via Formspree.
               </p>
               <div class="project-tech">
                 <span>HTML</span>
@@ -340,7 +435,14 @@
           </div>
 
           <!-- Wordle Solver -->
-          <div class="project-card" data-aos="zoom-in">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-max="8"
+            data-status="Completed"
+            data-aos="zoom-in"
+            data-category="personal"
+          >
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-puzzle-piece project-icon"></i>
@@ -374,7 +476,14 @@
           </div>
 
           <!-- Sudoku Solver -->
-          <div class="project-card" data-aos="zoom-in">
+          <div
+            class="project-card"
+            data-tilt
+            data-tilt-max="8"
+            data-status="Completed"
+            data-aos="zoom-in"
+            data-category="personal"
+          >
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-table project-icon"></i>
@@ -411,12 +520,13 @@
     </div>
   </section>
 
-  <!-- CV Section -->
+  <!-- CV Section (with Timeline & Skill Matrix) -->
   <section id="cv" class="section" data-aos="fade-up">
     <div class="section-content">
       <h2 class="section-title" data-aos="fade-down">Professional Profile</h2>
+
       <div class="cv-container">
-        <!-- Left Column -->
+        <!-- Left Column (Skills) -->
         <div class="cv-column">
           <div class="cv-block">
             <h3><i class="fas fa-code"></i> Technical Skills</h3>
@@ -531,42 +641,51 @@
           </div>
         </div>
 
-        <!-- Right Column -->
+        <!-- Right Column (Experience + Education) -->
         <div class="cv-column">
           <div class="cv-block">
             <h3><i class="fas fa-briefcase"></i> Experience</h3>
 
-            <!-- Inventory Clerk -->
-            <div class="experience-item">
-              <h4>Inventory Clerk @ Distribution Regitan</h4>
-              <span class="experience-date">2021 - 2022</span>
-              <ul>
-                <li>Automated inventory tasks using Python scripts</li>
-                <li>Reduced stock discrepancies by 40%</li>
-                <li>Managed daily warehouse operations</li>
-              </ul>
-            </div>
+            <!-- Timeline structure -->
+            <div class="timeline">
+              <!-- Inventory Clerk -->
+              <div class="timeline-item">
+                <div class="timeline-date">2021 - 2022</div>
+                <div class="timeline-content">
+                  <h4>Inventory Clerk @ Distribution Regitan</h4>
+                  <ul class="timeline-details">
+                    <li>Automated inventory tasks using Python scripts</li>
+                    <li>Reduced stock discrepancies by 40%</li>
+                    <li>Managed daily warehouse operations</li>
+                  </ul>
+                </div>
+              </div>
 
-            <!-- Open House Rep -->
-            <div class="experience-item">
-              <h4>Open House Representative (Volunteer)</h4>
-              <span class="experience-date">2022 - 2024</span>
-              <ul>
-                <li>Led campus tours and scheduled visits</li>
-                <li>Communicated program details to prospective students</li>
-                <li>Enhanced outreach and improved student engagement</li>
-              </ul>
-            </div>
+              <!-- Open House Rep -->
+              <div class="timeline-item">
+                <div class="timeline-date">2022 - 2024</div>
+                <div class="timeline-content">
+                  <h4>Open House Representative (Volunteer)</h4>
+                  <ul class="timeline-details">
+                    <li>Led campus tours and scheduled visits</li>
+                    <li>Communicated program details to prospective students</li>
+                    <li>Enhanced outreach and improved student engagement</li>
+                  </ul>
+                </div>
+              </div>
 
-            <!-- Tutor -->
-            <div class="experience-item">
-              <h4>Tutor @ Emmanuel Christian School</h4>
-              <span class="experience-date">2019 - Present</span>
-              <ul>
-                <li>Guided elementary/high school students in math & science</li>
-                <li>Taught programming fundamentals to beginners</li>
-                <li>Adapted teaching methods to diverse learner needs</li>
-              </ul>
+              <!-- Tutor -->
+              <div class="timeline-item">
+                <div class="timeline-date">2019 - Present</div>
+                <div class="timeline-content">
+                  <h4>Tutor @ Emmanuel Christian School</h4>
+                  <ul class="timeline-details">
+                    <li>Guided elementary/high school students in math & science</li>
+                    <li>Taught programming fundamentals to beginners</li>
+                    <li>Adapted teaching methods to diverse learner needs</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -622,6 +741,7 @@
           href="https://linkedin.com/in/mickelsamuel"
           class="contact-card"
           target="_blank"
+          rel="noopener"
         >
           <i class="fab fa-linkedin"></i>
           <div class="contact-info">
@@ -635,6 +755,7 @@
           href="https://github.com/mickelsamuel"
           class="contact-card"
           target="_blank"
+          rel="noopener"
         >
           <i class="fab fa-github"></i>
           <div class="contact-info">
@@ -648,6 +769,7 @@
           href="https://instagram.com/mickelsamuel_"
           class="contact-card"
           target="_blank"
+          rel="noopener"
         >
           <i class="fab fa-instagram"></i>
           <div class="contact-info">
@@ -657,36 +779,59 @@
         </a>
       </div>
 
-      <!-- Contact Form (Formspree) -->
+      <!-- Contact Form (Formspree) - labels, no placeholders -->
       <form
         id="contact-form"
         action="https://formspree.io/f/mblrrqqa"
         method="POST"
+        class="contact-form"
       >
         <div class="form-group">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Your Name"
-            required
-          />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email Address"
-            required
-          />
+          <label for="name">Name</label>
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-required="true"
+            />
+            <div class="input-border"></div>
+          </div>
         </div>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your Message..."
-          required
-        ></textarea>
-        <button type="submit" class="submit-button">
-          <i class="fas fa-paper-plane"></i> Send Message
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-required="true"
+            />
+            <div class="input-border"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <div class="input-wrapper">
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              aria-required="true"
+            ></textarea>
+            <div class="input-border"></div>
+          </div>
+        </div>
+
+        <button type="submit" class="cta-button">
+          <i class="fas fa-paper-plane"></i>
+          <span> Send Message </span>
+          <div class="hover-effect"></div>
         </button>
       </form>
 
@@ -705,10 +850,10 @@
         Crafted with <i class="fas fa-heart"></i> by Mickel Samuel
       </p>
       <div class="social-links">
-        <a href="https://github.com/mickelsamuel" target="_blank">
+        <a href="https://github.com/mickelsamuel" target="_blank" rel="noopener">
           <i class="fab fa-github"></i>
         </a>
-        <a href="https://leetcode.com/mickelsamuel" target="_blank">
+        <a href="https://leetcode.com/mickelsamuel" target="_blank" rel="noopener">
           <i class="fas fa-code"></i>
         </a>
       </div>
@@ -716,12 +861,12 @@
   </footer>
 
   <!-- Particles.js (for background animation) -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
 
   <!-- AOS Library -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
-  <!-- Main JS -->
-  <script src="scripts.js"></script>
+  <!-- Main JS (deferred for performance) -->
+  <script src="scripts.js" defer></script>
 </body>
 </html>
