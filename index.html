@@ -5,37 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mickel Samuel | Portfolio</title>
 
-  <!-- 
-    Google Fonts: Using Roboto as primary font. 
-    This can be adjusted or replaced with your preferred fonts. 
-  -->
+  <!-- Google Fonts -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
   />
 
-  <!-- 
-    FontAwesome for icons.
-    Make sure you have a stable or latest link for FontAwesome in production. 
-  -->
+  <!-- FontAwesome for icons -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
   />
 
-  <!-- 
-    Animate.css for simple CSS animations (fadeIn, fadeOut, etc.).
-    You can remove if not used frequently.
-  -->
+  <!-- Animate.css (optional) -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 
-  <!-- 
-    AOS Library for on-scroll animations.
-    "Next" tag sometimes references the latest version, so pin a version if needed.
-  -->
+  <!-- AOS Library for on-scroll animations -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/aos@next/dist/aos.css"
@@ -47,20 +35,19 @@
   <!-- Favicon (optional) -->
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
+<!-- Start in DARK mode by default -->
 <body class="dark-mode">
-  <!-- 
-    Particles Background 
-    This element sits behind the entire site to display animated particles.
-  -->
+
+  <!-- Particles Background -->
   <div id="particles-js"></div>
 
-  <!-- Loader (spinner shown while page loads) -->
+  <!-- Loader (spinner) -->
   <div id="loader" class="loader"></div>
 
-  <!-- Scroll Progress bar (small bar at the very top) -->
+  <!-- Scroll Progress bar -->
   <div class="scroll-progress"></div>
 
-  <!-- Back to Top Button (appears when user scrolls down) -->
+  <!-- Back to Top Button -->
   <button id="back-to-top" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
@@ -90,24 +77,21 @@
     </nav>
   </header>
 
-  <!-- 
-    Hero / About Section 
-    Introduces you and provides a quick summary. 
-  -->
+  <!-- Hero / About Section -->
   <section id="about" class="section">
-    <div class="hero-content">
-      <!-- Hero Text Section -->
-      <div class="hero-text animate__animated animate__fadeIn">
-        <h1>Innovate. Develop. <span class="highlight">Create.</span></h1>
+    <div class="hero-content container animate__animated animate__fadeIn">
+      <!-- Text Side -->
+      <div class="hero-text">
+        <div class="hero-tagline">Full-Stack & Embedded Systems Developer</div>
+        <h1>Turning Ideas Into <span class="highlight">Digital Reality</span></h1>
         <p class="typing-animation">
           I'm <span class="highlight">Mickel Samuel</span>, a
           <span id="typing"></span>
         </p>
         <p class="hero-bio">
-          3rd-year Computer Engineering student at Concordia University (2021–2026) 
-          committed to building impactful solutions through code. 
-          Passionate about full-stack development, embedded systems, 
-          and algorithm design.
+          3rd-year Computer Engineering student at Concordia University (2021–2026)
+          committed to building impactful solutions through code. Passionate about
+          full-stack development, embedded systems, and algorithm design.
         </p>
         <div class="hero-cta">
           <a href="#projects" class="cta-button">Explore Projects</a>
@@ -115,9 +99,12 @@
         </div>
       </div>
 
-      <!-- Hero Image (Profile Photo) -->
-      <div class="hero-image animate__animated animate__fadeIn">
-        <img src="main.jpg" alt="Mickel Samuel" class="profile-photo" />
+      <!-- Image Side (with parallax effect) -->
+      <div class="hero-image">
+        <div class="image-wrapper">
+          <img src="main.jpg" alt="Mickel Samuel" class="profile-photo" />
+          <div class="glow-effect"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -127,16 +114,13 @@
     <div class="section-content">
       <h2 class="section-title" data-aos="fade-down">Featured Projects</h2>
 
-      <!-- 
-        Academic Projects
-        These can be considered University-related or directly tied to course projects.
-      -->
+      <!-- Academic Projects -->
       <div class="projects-category">
         <h3 class="category-title">
           <i class="fas fa-graduation-cap"></i> Academic Projects
         </h3>
         <div class="projects-container">
-          <!-- Patient Monitoring Android App (2024) -->
+          <!-- Patient Monitoring Android App -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
@@ -144,9 +128,9 @@
                 <h4>Patient Monitoring Android App (2024)</h4>
               </div>
               <p class="project-description">
-                Monitors vital signs (heart rate, temperature, SpO2) 
-                in real-time with sensor integration and emergency alerts 
-                for elderly patients. Ensured data privacy/security and 
+                Monitors vital signs (heart rate, temperature, SpO2)
+                in real-time with sensor integration and emergency alerts
+                for elderly patients. Ensured data privacy/security and
                 a user-friendly UI.
               </p>
               <div class="project-tech">
@@ -173,7 +157,7 @@
             </div>
           </div>
 
-          <!-- Real Estate Website (2023) -->
+          <!-- Real Estate Website -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
@@ -181,7 +165,7 @@
                 <h4>Real Estate Website (2023)</h4>
               </div>
               <p class="project-description">
-                Full-stack property listing platform featuring user authentication, 
+                Full-stack property listing platform featuring user authentication,
                 geolocation-based search, and real-time chat for clients and brokers.
               </p>
               <div class="project-tech">
@@ -208,7 +192,7 @@
             </div>
           </div>
 
-          <!-- Autonomous Hovercraft (From original) -->
+          <!-- Autonomous Hovercraft -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
@@ -216,7 +200,7 @@
                 <h4>Autonomous Hovercraft (2023)</h4>
               </div>
               <p class="project-description">
-                Self-navigating hovercraft using Arduino Uno with ultrasonic sensors 
+                Self-navigating hovercraft using Arduino Uno with ultrasonic sensors
                 for obstacle avoidance and PID control.
               </p>
               <div class="project-tech">
@@ -243,7 +227,7 @@
           <i class="fas fa-laptop-code"></i> Personal Projects
         </h3>
         <div class="projects-container">
-          <!-- GymTrackPro (2025) - NEW -->
+          <!-- GymTrackPro -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
@@ -251,9 +235,9 @@
                 <h4>GymTrackPro (2025)</h4>
               </div>
               <p class="project-description">
-                Cross-platform workout app (React Native/Expo) enabling 
-                progressive overload tracking, offline storage, and a 
-                custom exercise library with real-time, personalized 
+                Cross-platform workout app (React Native/Expo) enabling
+                progressive overload tracking, offline storage, and a
+                custom exercise library with real-time, personalized
                 workout plans based on user analytics.
               </p>
               <div class="project-tech">
@@ -280,7 +264,7 @@
             </div>
           </div>
 
-          <!-- AgendaMate App (iOS) -->
+          <!-- AgendaMate iOS App -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
@@ -288,8 +272,8 @@
                 <h4>AgendaMate iOS App (2023)</h4>
               </div>
               <p class="project-description">
-                Comprehensive task management app with journaling, 
-                notes, and real-time weather updates using SwiftUI 
+                Comprehensive task management app with journaling,
+                notes, and real-time weather updates using SwiftUI
                 and Core Data. Includes Face ID/passcode protection.
               </p>
               <div class="project-tech">
@@ -324,8 +308,8 @@
                 <h4>Portfolio Website</h4>
               </div>
               <p class="project-description">
-                Fully responsive single-page website highlighting advanced animations (AOS), 
-                dynamic particle backgrounds, dark/light mode toggling, scroll progress, 
+                Fully responsive single-page website highlighting advanced animations (AOS),
+                dynamic particle backgrounds, dark/light mode toggling, scroll progress,
                 and a functional contact form via Formspree.
               </p>
               <div class="project-tech">
@@ -360,7 +344,7 @@
                 <h4>Wordle Solver (2022)</h4>
               </div>
               <p class="project-description">
-                Java-based application to solve Wordle puzzles 
+                Java-based application to solve Wordle puzzles
                 using optimized algorithms and data structures.
               </p>
               <div class="project-tech">
@@ -394,7 +378,7 @@
                 <h4>Sudoku Solver (2022)</h4>
               </div>
               <p class="project-description">
-                Java application using recursion and backtracking 
+                Java application using recursion and backtracking
                 to solve Sudoku puzzles efficiently.
               </p>
               <div class="project-tech">
@@ -419,7 +403,6 @@
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -430,7 +413,7 @@
     <div class="section-content">
       <h2 class="section-title" data-aos="fade-down">Professional Profile</h2>
       <div class="cv-container">
-        <!-- Left Column (Technical Skills) -->
+        <!-- Left Column -->
         <div class="cv-column">
           <div class="cv-block">
             <h3><i class="fas fa-code"></i> Technical Skills</h3>
@@ -458,7 +441,7 @@
               </div>
             </div>
 
-            <!-- Web & Mobile Technologies -->
+            <!-- Web & Mobile Tech -->
             <div class="skill-category">
               <h4>Web & Mobile Technologies</h4>
               <div class="skill-tags">
@@ -519,7 +502,7 @@
               </div>
             </div>
 
-            <!-- Methodologies & Practices -->
+            <!-- Methodologies -->
             <div class="skill-category">
               <h4>Methodologies & Practices</h4>
               <div class="skill-tags">
@@ -545,11 +528,11 @@
           </div>
         </div>
 
-        <!-- Right Column (Experience & Education) -->
+        <!-- Right Column -->
         <div class="cv-column">
           <div class="cv-block">
             <h3><i class="fas fa-briefcase"></i> Experience</h3>
-            
+
             <!-- Inventory Clerk -->
             <div class="experience-item">
               <h4>Inventory Clerk @ Distribution Regitan</h4>
@@ -561,7 +544,7 @@
               </ul>
             </div>
 
-            <!-- Open House Representative -->
+            <!-- Open House Rep -->
             <div class="experience-item">
               <h4>Open House Representative (Volunteer)</h4>
               <span class="experience-date">2022 - 2024</span>
@@ -592,15 +575,15 @@
               <span class="education-institution">Concordia University, Montreal, QC</span>
               <span class="education-date">2021 - 2026 (Expected)</span>
               <p>
-                Relevant Coursework: 
-                Artificial Intelligence (Python), 
-                Network Security & Management (Python, Wireshark), 
-                Communication Networks & Protocols (Python), 
-                Digital Systems Design (VHDL), 
-                Data Structures & Algorithms (Java), 
-                Operating Systems (C, Java), 
-                Programming Methodology (C++), 
-                Real-Time Systems, 
+                Relevant Coursework:
+                Artificial Intelligence (Python),
+                Network Security & Management (Python, Wireshark),
+                Communication Networks & Protocols (Python),
+                Digital Systems Design (VHDL),
+                Data Structures & Algorithms (Java),
+                Operating Systems (C, Java),
+                Programming Methodology (C++),
+                Real-Time Systems,
                 Software Process & Practices (JavaScript, CSS, Python).
               </p>
             </div>
@@ -729,13 +712,10 @@
     </div>
   </footer>
 
-  <!-- 
-    Particles.js (for background animation)
-    This script references an external config file (particles-config.json).
-  -->
+  <!-- Particles.js (for background animation) -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-  <!-- AOS Library (on-scroll animations) -->
+  <!-- AOS Library -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
   <!-- Main JS -->

@@ -1,23 +1,21 @@
 /****************************************************************************
  * scripts.js
- * ----------
- * Contains all custom JavaScript for your portfolio:
- *   - Menu toggle for responsive mobile nav
- *   - Smooth scrolling behavior
- *   - Theme switcher (light/dark mode)
- *   - Highlighting nav links based on scroll position
- *   - Contact form validation + submission
- *   - Loader (hide on page load)
+ * ---------
+ * All custom JavaScript for your updated portfolio:
+ *   - Mobile Menu Toggle
+ *   - Smooth scrolling
+ *   - Theme switcher (dark/light)
+ *   - Highlight nav links on scroll
+ *   - Form handling (Formspree)
+ *   - Loader
  *   - Typing animation
- *   - Particles.js initialization
- *   - AOS (on-scroll animations)
+ *   - Particles.js init
+ *   - AOS init
  *   - Scroll progress bar
  *   - Back-to-top button
+ *   - Parallax effect on hero image
  ****************************************************************************/
 
-/*************************************************
- * 1) SITE-WIDE INITIALIZATION
- *************************************************/
 function initSite() {
   initMenuToggle();
   initSmoothScroll();
@@ -30,16 +28,16 @@ function initSite() {
   initAOS();
   initScrollProgress();
   initBackToTop();
+  initParallaxHero();
 }
 
 /*************************************************
- * 2) RESPONSIVE NAV MENU TOGGLE
+ * 1) RESPONSIVE NAV MENU TOGGLE
  *************************************************/
 function initMenuToggle() {
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
 
-  // Toggles the mobile navigation sidebar
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     menuToggle.classList.toggle('active');
@@ -47,7 +45,7 @@ function initMenuToggle() {
 }
 
 /*************************************************
- * 3) SMOOTH SCROLLING FOR INTERNAL LINKS
+ * 2) SMOOTH SCROLLING
  *************************************************/
 function initSmoothScroll() {
   const navLinksElements = document.querySelectorAll('.nav-link');
@@ -57,21 +55,16 @@ function initSmoothScroll() {
   navLinksElements.forEach((link) => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-
-      // Get the target section ID
       const targetId = e.currentTarget.getAttribute('href');
       const targetElement = document.querySelector(targetId);
 
-      // Calculate offset position (minus fixed header height)
       const offsetPosition = targetElement.offsetTop - 60;
-
-      // Smoothly scroll to the target position
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth',
       });
 
-      // Close mobile nav after link click
+      // Close mobile nav
       navLinks.classList.remove('active');
       menuToggle.classList.remove('active');
     });
@@ -79,7 +72,7 @@ function initSmoothScroll() {
 }
 
 /*************************************************
- * 4) THEME SWITCHER (LIGHT / DARK MODE)
+ * 3) THEME SWITCHER (LIGHT / DARK)
  *************************************************/
 function initThemeSwitcher() {
   const lightModeButton = document.getElementById('light-mode');
@@ -88,12 +81,14 @@ function initThemeSwitcher() {
   // Switch to Light Mode
   lightModeButton.addEventListener('click', () => {
     document.body.classList.remove('dark-mode');
+    document.body.classList.add('light-mode');
     lightModeButton.classList.add('active');
     darkModeButton.classList.remove('active');
   });
 
   // Switch to Dark Mode
   darkModeButton.addEventListener('click', () => {
+    document.body.classList.remove('light-mode');
     document.body.classList.add('dark-mode');
     darkModeButton.classList.add('active');
     lightModeButton.classList.remove('active');
@@ -101,14 +96,13 @@ function initThemeSwitcher() {
 }
 
 /*************************************************
- * 5) HIGHLIGHT ACTIVE NAV LINK ON SCROLL
+ * 4) HIGHLIGHT NAV LINK ON SCROLL
  *************************************************/
 function highlightNavOnScroll() {
   const navLinksElements = document.querySelectorAll('.nav-link');
 
   window.addEventListener('scroll', () => {
     let currentSection = '';
-    // Identify which section is currently in view
     document.querySelectorAll('section').forEach((section) => {
       const sectionTop = section.offsetTop;
       if (window.scrollY >= sectionTop - 100) {
@@ -116,7 +110,6 @@ function highlightNavOnScroll() {
       }
     });
 
-    // Update nav link style based on currentSection
     navLinksElements.forEach((link) => {
       link.classList.remove('active');
       if (link.getAttribute('href').substring(1) === currentSection) {
@@ -127,7 +120,7 @@ function highlightNavOnScroll() {
 }
 
 /*************************************************
- * 6) CONTACT FORM HANDLING (FORMSPREE)
+ * 5) CONTACT FORM HANDLING (FORMSPREE)
  *************************************************/
 function initFormHandling() {
   const form = document.getElementById('contact-form');
@@ -167,7 +160,7 @@ function initFormHandling() {
       form.message.classList.remove('error');
     }
 
-    // If all fields are valid, send form to Formspree
+    // If all fields are valid, send form
     if (valid) {
       try {
         const formData = new FormData(form);
@@ -198,7 +191,7 @@ function initFormHandling() {
     }
   });
 
-  // Simple email validation (regex)
+  // Email validation
   function validateEmail(email) {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@(([^<>()[\]\\.,;:\s@"]+\.)+[^<>()[\]\\.,;:\s@"]{2,})$/i;
@@ -207,7 +200,7 @@ function initFormHandling() {
 }
 
 /*************************************************
- * 7) HIDE LOADER ON WINDOW LOAD
+ * 6) LOADER (HIDE ON WINDOW LOAD)
  *************************************************/
 function hideLoaderOnLoad() {
   window.addEventListener('load', () => {
@@ -219,13 +212,12 @@ function hideLoaderOnLoad() {
 }
 
 /*************************************************
- * 8) TYPING ANIMATION FOR HERO TEXT
+ * 7) TYPING ANIMATION
  *************************************************/
 function initTypingAnimation() {
   const typingText = document.getElementById('typing');
   if (!typingText) return;
 
-  // List of words to rotate in the typing animation
   const words = [
     'Software Developer',
     'Tech Enthusiast',
@@ -244,7 +236,6 @@ function initTypingAnimation() {
       typingText.textContent = currentWord.substring(0, charIndex + 1);
       charIndex++;
 
-      // If word fully typed, switch to deleting after a brief pause
       if (charIndex === currentWord.length) {
         isDeleting = true;
         setTimeout(type, 1000);
@@ -256,7 +247,6 @@ function initTypingAnimation() {
       typingText.textContent = currentWord.substring(0, charIndex - 1);
       charIndex--;
 
-      // If deletion completes, move to next word
       if (charIndex === 0) {
         isDeleting = false;
         wordIndex = (wordIndex + 1) % words.length;
@@ -266,17 +256,14 @@ function initTypingAnimation() {
       }
     }
   }
-
-  // Start the typing animation
   type();
 }
 
 /*************************************************
- * 9) PARTICLES.JS INITIALIZATION
+ * 8) PARTICLES.JS INITIALIZATION
  *************************************************/
 function initParticles() {
   try {
-    // Load configuration from "particles-config.json"
     particlesJS.load('particles-js', 'particles-config.json', function() {
       console.log('Particles.js loaded site-wide');
     });
@@ -286,26 +273,26 @@ function initParticles() {
 }
 
 /*************************************************
- * 10) AOS (ANIMATE ON SCROLL) INITIALIZATION
+ * 9) AOS INITIALIZATION
  *************************************************/
 function initAOS() {
   document.addEventListener('DOMContentLoaded', () => {
     AOS.init({
-      duration: 1000,  // Animation duration
-      once: true,      // Only animate on first scroll
-      offset: 120,     // Offset (in px) from original trigger point
-      delay: 200       // Global delay in ms
+      duration: 1000,
+      once: true,
+      offset: 120,
+      delay: 200
     });
   });
 }
 
 /*************************************************
- * 11) SCROLL PROGRESS BAR
+ * 10) SCROLL PROGRESS BAR
  *************************************************/
 function initScrollProgress() {
   const scrollProgress = document.querySelector('.scroll-progress');
   window.addEventListener('scroll', () => {
-    const scrollHeight =
+    const scrollHeight = 
       document.documentElement.scrollHeight - window.innerHeight;
     const scrolled = (window.scrollY / scrollHeight) * 100;
     scrollProgress.style.width = `${scrolled}%`;
@@ -313,12 +300,11 @@ function initScrollProgress() {
 }
 
 /*************************************************
- * 12) BACK-TO-TOP BUTTON
+ * 11) BACK-TO-TOP BUTTON
  *************************************************/
 function initBackToTop() {
   const backToTopButton = document.getElementById('back-to-top');
 
-  // Show/hide button based on scroll position
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {
       backToTopButton.style.display = 'block';
@@ -327,7 +313,6 @@ function initBackToTop() {
     }
   });
 
-  // Smooth scroll to top when clicked
   backToTopButton.addEventListener('click', () => {
     window.scrollTo({
       top: 0,
@@ -337,6 +322,20 @@ function initBackToTop() {
 }
 
 /*************************************************
- * 13) INITIALIZE THE SITE ON SCRIPT LOAD
+ * 12) PARALLAX EFFECT ON HERO IMAGE
+ *************************************************/
+function initParallaxHero() {
+  const imageWrapper = document.querySelector('.image-wrapper');
+  if (!imageWrapper) return;
+
+  window.addEventListener('mousemove', (e) => {
+    const x = (window.innerWidth - e.pageX) / 30;
+    const y = (window.innerHeight - e.pageY) / 30;
+    imageWrapper.style.transform = `translate(${x}px, ${y}px)`;
+  });
+}
+
+/*************************************************
+ * 13) INITIALIZE THE SITE
  *************************************************/
 initSite();
