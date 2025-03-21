@@ -5,25 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mickel Samuel | Portfolio</title>
 
-  <!-- Google Fonts -->
+  <!-- 
+    Google Fonts: Using Roboto as primary font. 
+    This can be adjusted or replaced with your preferred fonts. 
+  -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
   />
 
-  <!-- FontAwesome -->
+  <!-- 
+    FontAwesome for icons.
+    Make sure you have a stable or latest link for FontAwesome in production. 
+  -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
   />
 
-  <!-- Animate.css -->
+  <!-- 
+    Animate.css for simple CSS animations (fadeIn, fadeOut, etc.).
+    You can remove if not used frequently.
+  -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
 
-  <!-- AOS Library -->
+  <!-- 
+    AOS Library for on-scroll animations.
+    "Next" tag sometimes references the latest version, so pin a version if needed.
+  -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/aos@next/dist/aos.css"
@@ -32,37 +44,38 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Favicon -->
+  <!-- Favicon (optional) -->
   <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 <body class="dark-mode">
-  <!-- Particles Background (site-wide) -->
+  <!-- 
+    Particles Background 
+    This element sits behind the entire site to display animated particles.
+  -->
   <div id="particles-js"></div>
 
-  <!-- Loader -->
+  <!-- Loader (spinner shown while page loads) -->
   <div id="loader" class="loader"></div>
 
-  <!-- Scroll Progress -->
+  <!-- Scroll Progress bar (small bar at the very top) -->
   <div class="scroll-progress"></div>
 
-  <!-- Back to Top Button -->
+  <!-- Back to Top Button (appears when user scrolls down) -->
   <button id="back-to-top" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
 
-  <!-- Theme Switcher -->
+  <!-- Theme Switcher (dark/light mode toggle) -->
   <div class="theme-switcher">
-    <!-- Light Mode -->
     <button id="light-mode">
       <i class="fas fa-sun"></i>
     </button>
-    <!-- Dark Mode (start active) -->
     <button id="dark-mode" class="active">
       <i class="fas fa-moon"></i>
     </button>
   </div>
 
-  <!-- Header -->
+  <!-- Header and Navigation -->
   <header>
     <nav>
       <div class="nav-links">
@@ -77,9 +90,13 @@
     </nav>
   </header>
 
-  <!-- Hero / About Section -->
+  <!-- 
+    Hero / About Section 
+    Introduces you and provides a quick summary. 
+  -->
   <section id="about" class="section">
     <div class="hero-content">
+      <!-- Hero Text Section -->
       <div class="hero-text animate__animated animate__fadeIn">
         <h1>Innovate. Develop. <span class="highlight">Create.</span></h1>
         <p class="typing-animation">
@@ -87,8 +104,9 @@
           <span id="typing"></span>
         </p>
         <p class="hero-bio">
-          3nd-year Computer Engineering student at Concordia University building impactful
-          solutions through code. Passionate about full-stack development, embedded systems,
+          3rd-year Computer Engineering student at Concordia University (2021–2026) 
+          committed to building impactful solutions through code. 
+          Passionate about full-stack development, embedded systems, 
           and algorithm design.
         </p>
         <div class="hero-cta">
@@ -96,6 +114,8 @@
           <a href="#contact" class="cta-button secondary">Hire Me</a>
         </div>
       </div>
+
+      <!-- Hero Image (Profile Photo) -->
       <div class="hero-image animate__animated animate__fadeIn">
         <img src="main.jpg" alt="Mickel Samuel" class="profile-photo" />
       </div>
@@ -107,27 +127,33 @@
     <div class="section-content">
       <h2 class="section-title" data-aos="fade-down">Featured Projects</h2>
 
-      <!-- Academic Projects -->
+      <!-- 
+        Academic Projects
+        These can be considered University-related or directly tied to course projects.
+      -->
       <div class="projects-category">
         <h3 class="category-title">
           <i class="fas fa-graduation-cap"></i> Academic Projects
         </h3>
         <div class="projects-container">
-          <!-- Project 1 -->
+          <!-- Patient Monitoring Android App (2024) -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
                 <i class="fab fa-android project-icon"></i>
-                <h4>Patient Monitoring Android App</h4>
+                <h4>Patient Monitoring Android App (2024)</h4>
               </div>
               <p class="project-description">
-                Real-time health monitoring system for elderly patients with vital sign tracking
-                (heart rate, temperature, SpO2) and emergency alerts.
+                Monitors vital signs (heart rate, temperature, SpO2) 
+                in real-time with sensor integration and emergency alerts 
+                for elderly patients. Ensured data privacy/security and 
+                a user-friendly UI.
               </p>
               <div class="project-tech">
                 <span>Android Studio</span>
+                <span>Java/Kotlin</span>
                 <span>Firebase</span>
-                <span>BLE</span>
+                <span>Agile/Scrum</span>
               </div>
               <a
                 href="https://github.com/mickelsamuel/Elderly-Health-Monitor-App"
@@ -141,27 +167,28 @@
               <h4>Key Achievements</h4>
               <ul class="project-learned">
                 <li>Implemented real-time data sync with Firebase</li>
-                <li>Developed BLE communication protocol</li>
-                <li>Led team using Agile/Scrum methodology</li>
+                <li>Integrated sensor-based alerts & notifications</li>
+                <li>Led team with Agile/Scrum methodology</li>
               </ul>
             </div>
           </div>
 
-          <!-- Project 2 -->
+          <!-- Real Estate Website (2023) -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-home project-icon"></i>
-                <h4>Real Estate Website</h4>
+                <h4>Real Estate Website (2023)</h4>
               </div>
               <p class="project-description">
-                Full-stack property listing platform with user authentication, search filters,
-                and real-time chat functionality.
+                Full-stack property listing platform featuring user authentication, 
+                geolocation-based search, and real-time chat for clients and brokers.
               </p>
               <div class="project-tech">
                 <span>Next.js</span>
                 <span>PocketBase</span>
                 <span>Mantine UI</span>
+                <span>JWT Auth</span>
               </div>
               <a
                 href="https://github.com/CodyStride/Cody_Stride-soen341projectF2023"
@@ -175,21 +202,21 @@
               <h4>Key Features</h4>
               <ul class="project-learned">
                 <li>JWT authentication system</li>
-                <li>Advanced search with geolocation</li>
+                <li>Advanced search with geolocation filters</li>
                 <li>Live chat using WebSockets</li>
               </ul>
             </div>
           </div>
 
-          <!-- Project 3 -->
+          <!-- Autonomous Hovercraft (From original) -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-robot project-icon"></i>
-                <h4>Autonomous Hovercraft</h4>
+                <h4>Autonomous Hovercraft (2023)</h4>
               </div>
               <p class="project-description">
-                Self-navigating hovercraft using Arduino Uno with ultrasonic sensors
+                Self-navigating hovercraft using Arduino Uno with ultrasonic sensors 
                 for obstacle avoidance and PID control.
               </p>
               <div class="project-tech">
@@ -201,9 +228,9 @@
             <div class="project-back">
               <h4>Technical Details</h4>
               <ul class="project-learned">
-                <li>Designed custom PCB for motor control</li>
-                <li>Implemented sensor fusion algorithm</li>
-                <li>Achieved 85% obstacle detection accuracy</li>
+                <li>Custom PCB for motor control</li>
+                <li>Sensor fusion for navigation</li>
+                <li>85% obstacle detection accuracy</li>
               </ul>
             </div>
           </div>
@@ -216,7 +243,80 @@
           <i class="fas fa-laptop-code"></i> Personal Projects
         </h3>
         <div class="projects-container">
-          <!-- Project: Portfolio Website -->
+          <!-- GymTrackPro (2025) - NEW -->
+          <div class="project-card" data-aos="zoom-in">
+            <div class="project-details">
+              <div class="project-header">
+                <i class="fas fa-dumbbell project-icon"></i>
+                <h4>GymTrackPro (2025)</h4>
+              </div>
+              <p class="project-description">
+                Cross-platform workout app (React Native/Expo) enabling 
+                progressive overload tracking, offline storage, and a 
+                custom exercise library with real-time, personalized 
+                workout plans based on user analytics.
+              </p>
+              <div class="project-tech">
+                <span>React Native (Expo)</span>
+                <span>TypeScript</span>
+                <span>AsyncStorage</span>
+                <span>Custom Animations</span>
+              </div>
+              <a
+                href="https://github.com/mickelsamuel"
+                class="project-link"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+            <div class="project-back">
+              <h4>Key Features</h4>
+              <ul class="project-learned">
+                <li>Offline-ready architecture with local storage</li>
+                <li>Dynamic exercise library & progressive overload system</li>
+                <li>User analytics for real-time workout suggestions</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- AgendaMate App (iOS) -->
+          <div class="project-card" data-aos="zoom-in">
+            <div class="project-details">
+              <div class="project-header">
+                <i class="fab fa-apple project-icon"></i>
+                <h4>AgendaMate iOS App (2023)</h4>
+              </div>
+              <p class="project-description">
+                Comprehensive task management app with journaling, 
+                notes, and real-time weather updates using SwiftUI 
+                and Core Data. Includes Face ID/passcode protection.
+              </p>
+              <div class="project-tech">
+                <span>SwiftUI</span>
+                <span>Core Data</span>
+                <span>Weather API</span>
+                <span>Xcode</span>
+              </div>
+              <a
+                href="https://github.com/mickelsamuel/AgendaMate"
+                class="project-link"
+                target="_blank"
+              >
+                <i class="fab fa-github"></i> View Code
+              </a>
+            </div>
+            <div class="project-back">
+              <h4>Key Features</h4>
+              <ul class="project-learned">
+                <li>Secure local data storage with Core Data</li>
+                <li>Face ID/passcode for privacy</li>
+                <li>Live weather integration & journaling</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Portfolio Website -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
@@ -224,10 +324,9 @@
                 <h4>Portfolio Website</h4>
               </div>
               <p class="project-description">
-                A fully responsive single-page site showcasing advanced animations (AOS), 
+                Fully responsive single-page website highlighting advanced animations (AOS), 
                 dynamic particle backgrounds, dark/light mode toggling, scroll progress, 
-                and a functional contact form via Formspree. Built to highlight professional 
-                projects, skills, and an interactive user experience.
+                and a functional contact form via Formspree.
               </p>
               <div class="project-tech">
                 <span>HTML</span>
@@ -253,16 +352,16 @@
             </div>
           </div>
 
-          <!-- Project 6 -->
+          <!-- Wordle Solver -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-puzzle-piece project-icon"></i>
-                <h4>Wordle Solver</h4>
+                <h4>Wordle Solver (2022)</h4>
               </div>
               <p class="project-description">
-                Java-based application to solve Wordle puzzles using optimized algorithms
-                and data structures.
+                Java-based application to solve Wordle puzzles 
+                using optimized algorithms and data structures.
               </p>
               <div class="project-tech">
                 <span>Java</span>
@@ -287,16 +386,16 @@
             </div>
           </div>
 
-          <!-- Project 7 -->
+          <!-- Sudoku Solver -->
           <div class="project-card" data-aos="zoom-in">
             <div class="project-details">
               <div class="project-header">
                 <i class="fas fa-table project-icon"></i>
-                <h4>Sudoku Solver</h4>
+                <h4>Sudoku Solver (2022)</h4>
               </div>
               <p class="project-description">
-                Java application using recursion and backtracking to solve Sudoku puzzles
-                efficiently.
+                Java application using recursion and backtracking 
+                to solve Sudoku puzzles efficiently.
               </p>
               <div class="project-tech">
                 <span>Java</span>
@@ -321,39 +420,6 @@
             </div>
           </div>
 
-          <!-- AgendaMate App (moved from Academic) -->
-          <div class="project-card" data-aos="zoom-in">
-            <div class="project-details">
-              <div class="project-header">
-                <i class="fab fa-apple project-icon"></i>
-                <h4>AgendaMate App (iOS)</h4>
-              </div>
-              <p class="project-description">
-                Comprehensive task management app with journaling, notes, and real-time
-                weather updates using SwiftUI and Core Data.
-              </p>
-              <div class="project-tech">
-                <span>SwiftUI</span>
-                <span>Core Data</span>
-                <span>Weather API</span>
-              </div>
-              <a
-                href="https://github.com/mickelsamuel/AgendaMate"
-                class="project-link"
-                target="_blank"
-              >
-                <i class="fab fa-github"></i> View Code
-              </a>
-            </div>
-            <div class="project-back">
-              <h4>Key Features</h4>
-              <ul class="project-learned">
-                <li>Face ID and passcode protection</li>
-                <li>Real-time weather integration</li>
-                <li>Customizable task categories</li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -364,11 +430,12 @@
     <div class="section-content">
       <h2 class="section-title" data-aos="fade-down">Professional Profile</h2>
       <div class="cv-container">
-        <!-- Left Column -->
+        <!-- Left Column (Technical Skills) -->
         <div class="cv-column">
           <div class="cv-block">
             <h3><i class="fas fa-code"></i> Technical Skills</h3>
 
+            <!-- Programming Languages -->
             <div class="skill-category">
               <h4>Programming Languages</h4>
               <div class="skill-tags">
@@ -376,118 +443,172 @@
                 <span>Python</span>
                 <span>Java</span>
                 <span>C</span>
-                <span>Assembly Language</span>
-                <span>HTML</span>
-                <span>CSS</span>
+                <span>Assembly (x86/ARM)</span>
+                <span>Swift</span>
+                <span>Kotlin</span>
                 <span>JavaScript</span>
+                <span>TypeScript</span>
                 <span>PHP</span>
-                <span>VHDL</span>
-                <span>ARM</span>
-                <span>XML</span>
                 <span>R</span>
                 <span>SQL</span>
-                <span>TypeScript</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>XML</span>
+                <span>VHDL</span>
               </div>
             </div>
 
+            <!-- Web & Mobile Technologies -->
             <div class="skill-category">
-              <h4>Web Technologies</h4>
+              <h4>Web & Mobile Technologies</h4>
               <div class="skill-tags">
                 <span>React</span>
-                <span>NextJS</span>
+                <span>Next.js</span>
+                <span>Node.js</span>
+                <span>Express.js</span>
                 <span>Bootstrap</span>
                 <span>Mantine UI</span>
-                <span>MongoDB</span>
-                <span>APIs</span>
+                <span>Expo/React Native</span>
+                <span>PocketBase</span>
+                <span>REST/GraphQL APIs</span>
               </div>
             </div>
 
+            <!-- Frameworks & Tools -->
             <div class="skill-category">
               <h4>Frameworks & Tools</h4>
               <div class="skill-tags">
-                <span>Xcode</span>
-                <span>Visual Studio</span>
-                <span>IntelliJ IDEA</span>
-                <span>PocketBase</span>
                 <span>Android Studio</span>
+                <span>Xcode</span>
+                <span>IntelliJ IDEA</span>
+                <span>Visual Studio</span>
                 <span>Git</span>
-                <span>Github</span>
+                <span>GitHub</span>
+                <span>Docker</span>
+                <span>Firebase</span>
+                <span>AWS (basic)</span>
                 <span>Verilog</span>
-                <span>FPGAs</span>
+                <span>FPGA (Xilinx)</span>
                 <span>MATLAB</span>
                 <span>ModelSim</span>
-                <span>Xilinx Tool</span>
                 <span>UML</span>
-                <span>Docker</span>
+                <span>Unit Testing (Jest, JUnit)</span>
               </div>
             </div>
 
+            <!-- Databases -->
+            <div class="skill-category">
+              <h4>Databases</h4>
+              <div class="skill-tags">
+                <span>MongoDB</span>
+                <span>MySQL</span>
+                <span>PostgreSQL</span>
+                <span>SQLite</span>
+                <span>PocketBase</span>
+              </div>
+            </div>
+
+            <!-- Operating Systems -->
             <div class="skill-category">
               <h4>Operating Systems</h4>
               <div class="skill-tags">
                 <span>Windows</span>
                 <span>Linux</span>
-                <span>MacOS</span>
-                <span>Mobile</span>
+                <span>macOS</span>
+                <span>Mobile (iOS/Android)</span>
               </div>
             </div>
 
+            <!-- Methodologies & Practices -->
             <div class="skill-category">
-              <h4>Methodologies</h4>
+              <h4>Methodologies & Practices</h4>
               <div class="skill-tags">
                 <span>Agile/Scrum</span>
-                <span>Full-Stack Web Development</span>
                 <span>OOP</span>
+                <span>Full-Stack Dev</span>
                 <span>Software Eng Principles</span>
+                <span>DevOps (basic Docker)</span>
+                <span>PWAs</span>
                 <span>Numerical Analysis</span>
               </div>
             </div>
 
+            <!-- Languages -->
             <div class="skill-category">
               <h4>Languages</h4>
               <div class="skill-tags">
-                <span>English (fluent)</span>
-                <span>French (intermediate)</span>
-                <span>Arabic (fluent)</span>
+                <span>English (Native)</span>
+                <span>French (Professional)</span>
+                <span>Arabic (Native)</span>
               </div>
             </div>
-
           </div>
         </div>
 
-        <!-- Right Column -->
+        <!-- Right Column (Experience & Education) -->
         <div class="cv-column">
           <div class="cv-block">
             <h3><i class="fas fa-briefcase"></i> Experience</h3>
+            
+            <!-- Inventory Clerk -->
             <div class="experience-item">
               <h4>Inventory Clerk @ Distribution Regitan</h4>
               <span class="experience-date">2021 - 2022</span>
               <ul>
-                <li>Automated inventory tracking using Python scripts</li>
+                <li>Automated inventory tasks using Python scripts</li>
                 <li>Reduced stock discrepancies by 40%</li>
+                <li>Managed daily warehouse operations</li>
+              </ul>
+            </div>
+
+            <!-- Open House Representative -->
+            <div class="experience-item">
+              <h4>Open House Representative (Volunteer)</h4>
+              <span class="experience-date">2022 - 2024</span>
+              <ul>
+                <li>Led campus tours and scheduled visits</li>
+                <li>Communicated program details to prospective students</li>
+                <li>Enhanced outreach and improved student engagement</li>
+              </ul>
+            </div>
+
+            <!-- Tutor -->
+            <div class="experience-item">
+              <h4>Tutor @ Emmanuel Christian School</h4>
+              <span class="experience-date">2019 - Present</span>
+              <ul>
+                <li>Guided elementary/high school students in math & science</li>
+                <li>Taught programming fundamentals to beginners</li>
+                <li>Adapted teaching methods to diverse learner needs</li>
               </ul>
             </div>
           </div>
 
+          <!-- Education -->
           <div class="cv-block">
             <h3><i class="fas fa-graduation-cap"></i> Education</h3>
             <div class="education-item">
               <h4>B.Eng Computer Engineering</h4>
-              <span class="education-institution">Concordia University</span>
-              <span class="education-date">2022 - 2026</span>
+              <span class="education-institution">Concordia University, Montreal, QC</span>
+              <span class="education-date">2021 - 2026 (Expected)</span>
               <p>
-                Relevant Coursework: Software Process and Practices (JavaScript, CSS, Python), 
-                Data Structures and Algorithms (Java), Operating Systems (C, Java), 
-                Digital Systems Design (VHDL), Computer Organization and Software (x86 Assembly), 
-                Programming Methodology (C++), Communication Networks and Protocols (Python), 
-                Real-Time Systems, Numerical Methods (MATLAB), Networks Security and Management 
-                (Python, Wireshark), Artificial Intelligence (Python).
+                Relevant Coursework: 
+                Artificial Intelligence (Python), 
+                Network Security & Management (Python, Wireshark), 
+                Communication Networks & Protocols (Python), 
+                Digital Systems Design (VHDL), 
+                Data Structures & Algorithms (Java), 
+                Operating Systems (C, Java), 
+                Programming Methodology (C++), 
+                Real-Time Systems, 
+                Software Process & Practices (JavaScript, CSS, Python).
               </p>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Downloadable CV link -->
       <a href="Mickel_Samuel_Resume.pdf" class="cv-download" download>
         <i class="fas fa-download"></i> Download Full CV
       </a>
@@ -499,8 +620,9 @@
     <div class="section-content">
       <h2 class="section-title" data-aos="fade-down">Let's Connect</h2>
 
+      <!-- Contact Options (Cards) -->
       <div class="contact-grid">
-        <!-- Contact Card 1: Email -->
+        <!-- Email Card -->
         <a href="mailto:mickelsamuel.b@gmail.com" class="contact-card">
           <i class="fas fa-envelope"></i>
           <div class="contact-info">
@@ -509,7 +631,7 @@
           </div>
         </a>
 
-        <!-- Contact Card 2: LinkedIn -->
+        <!-- LinkedIn Card -->
         <a
           href="https://linkedin.com/in/mickelsamuel"
           class="contact-card"
@@ -522,7 +644,7 @@
           </div>
         </a>
 
-        <!-- Contact Card 3: GitHub -->
+        <!-- GitHub Card -->
         <a
           href="https://github.com/mickelsamuel"
           class="contact-card"
@@ -535,7 +657,7 @@
           </div>
         </a>
 
-        <!-- Contact Card 4: Instagram -->
+        <!-- Instagram Card -->
         <a
           href="https://instagram.com/mickelsamuel_"
           class="contact-card"
@@ -549,7 +671,7 @@
         </a>
       </div>
 
-      <!-- Contact Form -->
+      <!-- Contact Form (Formspree) -->
       <form
         id="contact-form"
         action="https://formspree.io/f/mblrrqqa"
@@ -582,7 +704,7 @@
         </button>
       </form>
 
-      <!-- Form Submission Message -->
+      <!-- Form Submission Feedback -->
       <p id="form-message"></p>
     </div>
   </section>
@@ -607,13 +729,16 @@
     </div>
   </footer>
 
-  <!-- Particles.js -->
+  <!-- 
+    Particles.js (for background animation)
+    This script references an external config file (particles-config.json).
+  -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
-  <!-- AOS Library -->
+  <!-- AOS Library (on-scroll animations) -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-  <!-- Main Scripts -->
+  <!-- Main JS -->
   <script src="scripts.js"></script>
 </body>
 </html>

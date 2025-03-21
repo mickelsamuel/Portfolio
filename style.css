@@ -1,3 +1,10 @@
+/* 
+  style.css
+  ----------
+  This file contains all custom styling for the portfolio.
+  It includes resets, layout, dark-mode toggles, section styling, etc.
+*/
+
 /* RESET & BASE STYLES */
 * {
   box-sizing: border-box;
@@ -5,33 +12,29 @@
   padding: 0;
 }
 
-/* 
-  Force a dark background for visibility of particles.
-  Body text is white for contrast on dark.
-*/
+/* BODY STYLING */
 body {
-  background-color: #101010; /* Dark background */
-  color: #ffffff;           /* White text */
+  background-color: #101010; /* Dark background for better contrast with particles */
+  color: #ffffff;           /* Light text color for readability */
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   line-height: 1.8;
   margin: 0;
-  padding-top: 60px; /* space for fixed header */
+  padding-top: 60px; /* Space for the fixed header */
   transition: background-color 0.5s ease, color 0.5s ease;
   position: relative;
   overflow-x: hidden;
 }
 
-/* Dark Mode (optional - slightly different shade if you want) */
 body.dark-mode {
-  background-color: #000000; /* Even darker background */
-  color: #e0e0e0;            /* Slightly lighter text */
+  background-color: #000000; /* Slightly darker background for 'dark-mode' */
+  color: #e0e0e0;
 }
 
 /* LINKS & BUTTONS */
 a {
   text-decoration: none;
-  color: #62b0ff; /* stands out on dark */
+  color: #62b0ff; /* Emphasized color on dark background */
   transition: color 0.3s ease;
 }
 
@@ -51,17 +54,11 @@ button {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -1; /* behind all content */
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* If you want a fallback color behind the particles:
-     background-color: #000;
-  */
+  z-index: -1; /* Behind all main content */
 }
 
 /* HEADER & NAV */
 header {
-  /* Slight transparency so you see particles behind header */
   background-color: rgba(40, 40, 40, 0.9);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
   position: fixed;
@@ -155,7 +152,7 @@ nav {
   border: none;
   opacity: 0.9;
   transition: all 0.3s ease;
-  display: none; /* displayed by JS */
+  display: none; /* JS will show this on scroll */
 }
 
 #back-to-top:hover {
@@ -165,16 +162,11 @@ nav {
 
 /* SECTION WRAPPER */
 .section {
-  /* fully transparent so particles are visible */
   background: transparent;
   padding: 4rem 1rem;
   position: relative;
 }
 
-/* 
-  In dark-mode, also transparent; 
-  the body's dark background ensures contrast
-*/
 .dark-mode .section {
   background: transparent;
 }
@@ -189,10 +181,10 @@ nav {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2.2rem;
-  color: #fff; /* White headings on dark background */
+  color: #fff;
 }
 
-body.dark-mode .section-title {
+.dark-mode .section-title {
   color: #e0e0e0;
 }
 
@@ -217,13 +209,14 @@ body.dark-mode .section-title {
   color: #fff;
 }
 
-body.dark-mode .hero-text h1 {
+.dark-mode .hero-text h1 {
   color: #e0e0e0;
 }
 
 .typing-animation {
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  color: #ccc;
 }
 
 .hero-bio {
@@ -284,7 +277,7 @@ body.dark-mode .hero-text h1 {
   letter-spacing: 1px;
 }
 
-body.dark-mode .category-title {
+.dark-mode .category-title {
   color: #e0e0e0;
 }
 
@@ -306,7 +299,7 @@ body.dark-mode .category-title {
   color: #fff;
 }
 
-body.dark-mode .project-card {
+.dark-mode .project-card {
   background-color: #2e2e2e;
 }
 
@@ -332,7 +325,7 @@ body.dark-mode .project-card {
   color: #fff;
 }
 
-body.dark-mode .project-details h4 {
+.dark-mode .project-details h4 {
   color: #fff;
 }
 
@@ -352,7 +345,7 @@ body.dark-mode .project-details h4 {
   font-size: 0.9rem;
 }
 
-body.dark-mode .project-tech span {
+.dark-mode .project-tech span {
   background: #444;
   color: #eee;
 }
@@ -389,7 +382,7 @@ body.dark-mode .project-tech span {
   color: #fff;
 }
 
-body.dark-mode .cv-column {
+.dark-mode .cv-column {
   background-color: #2e2e2e;
 }
 
@@ -452,7 +445,7 @@ body.dark-mode .cv-column {
   color: #fff;
 }
 
-body.dark-mode .contact-card {
+.dark-mode .contact-card {
   background-color: #2e2e2e;
 }
 
@@ -521,22 +514,16 @@ body.dark-mode .contact-card {
   margin-top: 1rem;
 }
 
-/* Shake animation for errors */
+/* Shake animation for form errors */
 .error {
   border-color: #ff4444 !important;
   animation: shake 0.5s;
 }
 
 @keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(5px);
-  }
-  75% {
-    transform: translateX(-5px);
-  }
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
 }
 
 /* FOOTER */
@@ -547,7 +534,7 @@ footer {
   text-align: center;
 }
 
-body.dark-mode footer {
+.dark-mode footer {
   background-color: #1e1e1e;
 }
 
@@ -639,7 +626,7 @@ body.dark-mode footer {
   }
 }
 
-/* LOADER */
+/* LOADER (page loading spinner) */
 .loader {
   position: fixed;
   left: 50%;
@@ -650,7 +637,7 @@ body.dark-mode footer {
   border-radius: 50%;
   border-top: 5px solid #62b0ff;
   animation: spin 1s linear infinite;
-  z-index: 9999; /* Ensure loader stays on top */
+  z-index: 9999;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.6);
 }
@@ -660,12 +647,8 @@ body.dark-mode footer {
 }
 
 @keyframes spin {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 /* SCROLL PROGRESS BAR */
@@ -679,7 +662,7 @@ body.dark-mode footer {
   z-index: 2000;
 }
 
-/* AOS Override for Smooth Animations */
+/* AOS override for smooth animations */
 [data-aos] {
   transition-property: transform, opacity !important;
 }
