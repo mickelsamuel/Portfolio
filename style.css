@@ -1,15 +1,3 @@
-/* 
-  style.css
-  --------
-  Incorporates the new feedback:
-    - New color variables & palette (dark/light mode).
-    - Updated hero section design.
-    - Glassmorphism project cards with 3D tilt.
-    - Timeline for experience.
-    - Skill matrix with data-driven positioning.
-    - Enhanced contact form with labels and micro-interactions.
-*/
-
 /* 1) CSS VARIABLES & BASE RESETS */
 :root {
   /* Primary palette */
@@ -772,9 +760,6 @@ body.light-mode .skill-tags span {
   white-space: nowrap;
 }
 
-/* Position skill dots via inline style:
-   style="--x:80; --y:70;"
-   Then use the custom properties to place them: */
 .skill-dot {
   left: calc(var(--x) * 1%);
   top: calc(100% - (var(--y) * 1%));
